@@ -34,3 +34,21 @@ FROM vendors v
 JOIN sales s ON s.vendor_id = v.vendor_id
 GROUP BY v.vendor_id, v.vendor_name
 ORDER BY total_sales DESC;
+
+-- festival day that sold the most tickets
+SELECT
+    festival_day,
+    COUNT(*) AS tickets_sold
+FROM tickets
+GROUP BY festival_day
+ORDER BY tickets_sold DESC;
+
+-- vendors whose total sales exceed a chosen amount
+SELECT
+    v.vendor_name,
+    SUM(s.sale_amount) AS total_sales
+FROM vendors v
+JOIN sales s ON s.vendor_id = v.vendor_id
+GROUP BY v.vendor_id, v.vendor_name
+HAVING SUM(s.sale_amount) > 15000
+ORDER BY total_sales DESC;
