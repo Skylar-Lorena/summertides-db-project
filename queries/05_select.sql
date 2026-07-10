@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 -- =====================================================
 -- 05_SELECT.SQL: QA TEST SUITE & DATA VERIFICATION
 -- =====================================================
@@ -36,3 +37,25 @@ LIMIT 5;
 
 -- Test 4: Duplicate Email Check (Should fail due to UNIQUE email rule)
 -- INSERT INTO attendees (first_name, last_name, email, phone) VALUES ('John', 'Doe', 'duplicate@test.com', '123456');
+=======
+-- Display all stages
+SELECT * FROM stages;
+
+-- Display all artists
+SELECT * FROM artists;
+
+-- Display all attendees
+SELECT * FROM attendees;
+
+-- Display all vendors
+SELECT * FROM vendors;
+
+-- Display all sponsors
+SELECT * FROM sponsors;
+
+-- Display all performances
+SELECT * FROM performances;
+
+-- Display all sales
+SELECT * FROM sales;
+>>>>>>> deeb832b5f86237d2e1d3ed79d00d4d860d84549
