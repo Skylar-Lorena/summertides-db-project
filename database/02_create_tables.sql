@@ -67,3 +67,12 @@ CREATE TABLE vendors (
     category    VARCHAR(50)  NOT NULL,
     rating      DECIMAL(2,1) CHECK (rating BETWEEN 0 AND 5)
 );
+
+-- ---------------------------------------------------
+-- Sponsors: companies funding the festival / stages
+-- ---------------------------------------------------
+CREATE TABLE sponsors (
+    sponsor_id           SERIAL PRIMARY KEY,
+    sponsor_name         VARCHAR(100)  NOT NULL UNIQUE,
+    contribution_amount  DECIMAL(10,2) NOT NULL CHECK (contribution_amount >= 0)
+);
