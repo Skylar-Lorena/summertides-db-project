@@ -1,43 +1,47 @@
 ---
 marp: true
-theme: default
+theme: gaia
+_class: lead
 paginate: true
+backgroundColor: #1e293b
+color: #f8fafc
 ---
 
 # 🌊 SummerTides Festival
 
-### Database Project Presentation
-
-July 2026
+### **Relational Database Management System**
 
 ---
 
 ## 📌 The Problem
 
-- Organizers used messy spreadsheets for tickets, schedules, and money.
-- This caused duplicate records, double-booked artists, and wrong math.
+- **Data Fragmentation:** Organizers relied on disjointed, manual spreadsheets.
+- **Operational Inefficiencies:** Resulted in duplicate records, double-booked artists, and critical financial math errors.
 
 ---
 
 ## 💡 The Solution
 
-- We built a single, organized SQL database system.
-- It stops scheduling mistakes, tracks ticket sales safely, and makes reporting easy.
+- **Centralized SQL System:** Built a robust, single-source-of-truth database.
+- **Data Integrity:** Eliminated scheduling conflicts, secured ticket transaction tracking, and automated business reporting.
 
 ---
 
-## 👥 The Team
+## 👥 Engineering Team & Roles
 
-- **Faith Kiruku:** Designed the database structure.
-- **Ilhan Mohamud:** Wrote the code to create the tables.
-- **Brigit Njoroge:** Created and added the festival mock data.
-- **Wayne Kiptoo:** Wrote the queries to pull business reports.
-- **Gad Ontune:** Tested the code to find and fix errors.
-- **Abdinasir Osman:** Wrote the documentation and this presentation.
+- **Faith Kiruku** — _Database Architect_ (Designed schemas & structural ERD)
+- **Ilhan Mohamud** — _Database Engineer_ (Wrote core DDL & table creation scripts)
+- **Brigit Njoroge** — _Data Engineer_ (Developed & injected festival mock data)
+- **Wayne Kiptoo** — _BI Analyst_ (Wrote analytical queries for business reports)
+- **Gad Ontune** — _QA Engineer_ (Tested constraints, debugged, and optimized code)
+- **Abdinasir Osman** — _Technical Writer_ (Authored documentation & presentation)
 
 ---
 
-## 🚀 How It Works
+## 🚀 System Deployment & Execution
 
-- **Step 1:** Setup the database, build the tables, and add the data.
-- **Step 2:** Run the analytical queries to see real-time festival reports.
+1. **Schema Initialization**
+   Execute `01_create_database.sql` through `04_constraints.sql` to build the structure.
+
+2. **Analytical Reporting**
+   Run queries `05_select.sql` through `12_bonus.sql` to generate live business metrics.
