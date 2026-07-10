@@ -6,3 +6,7 @@
 --          these are the extra business rules and performance
 --          helpers that build on top of that base schema.
 
+
+-- An artist cannot be double-booked at the same time on the same day.
+ALTER TABLE performances
+    ADD CONSTRAINT uq_artist_day_time UNIQUE (artist_id, festival_day, start_time);
