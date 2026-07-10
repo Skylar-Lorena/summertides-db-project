@@ -8,3 +8,5 @@ SELECT v.vendor_name, SUM(s.amount) AS total_sales
 FROM vendors v
 LEFT JOIN sales s ON v.vendor_id = s.vendor_id
 GROUP BY v.vendor_name;
+
+SELECT * FROM attendee_ticket_summary LIMIT 10;
