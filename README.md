@@ -1,96 +1,94 @@
 # 🌊 SummerTides Festival Database
 
-## Welcome
+## Overview
 
-Congratulations!
+This project is a SQLite-based relational database for the SummerTides Festival. It models the core business data needed to manage attendees, ticket sales, performances, vendors, sponsors, and stage sponsorships.
 
-Your team has been contracted as database engineers for **SummerTides Festival**, one of the largest annual beach festivals in East Africa.
+The project is designed as a sprint-style SQL assignment and includes:
 
-The organizers currently manage everything using spreadsheets.
+- database creation scripts
+- table definitions and relationships
+- sample data insertion
+- constraint validation
+- SQL practice exercises
+- reusable views
+- supporting documentation
 
-Unfortunately, duplicate records, missing ticket information, scheduling conflicts, and poor reporting have become a nightmare.
+## Project Goals
 
-Your mission is to design and build a relational database that will power the entire festival.
+By completing this project, the team will demonstrate the ability to:
 
----
+- design a relational database schema
+- create tables with primary and foreign keys
+- enforce business rules with constraints
+- load realistic sample data
+- write SQL queries for reporting and analysis
+- create views for reusable reporting
 
-## The Festival
+## Database Scope
 
-SummerTides is a three-day festival featuring:
+The database covers the following entities:
 
-- Live music
-- DJs
-- Food vendors
-- Art exhibitions
-- Sponsors
-- Multiple performance stages
-- Thousands of attendees
+- attendees and ticket purchases
+- artists and scheduled performances
+- festival stages and stage sponsorships
+- vendors and sales records
+- sponsors and supporting partnerships
 
-The organizing committee wants a database that allows them to easily answer questions such as:
+## Repository Structure
 
-- Which artist is performing where?
-- Which attendees bought VIP tickets?
-- Which stage hosted the most performances?
-- Which vendors generated the most sales?
-- Which sponsors funded each stage?
+- [database](database) — SQL files for creating the database, tables, data, and constraints
+- [queries](queries) — SQL exercises for SELECT, filtering, sorting, CASE, grouping, joins, views, and bonus queries
+- [docs](docs) — documentation such as the data dictionary and workflow guide
+- [presentation](presentation) — presentation notes for the project
 
----
+## Prerequisites
 
-## Project Objectives
+Make sure SQLite is installed on your machine.
 
-Your team will:
+Check it with:
 
-- Design a relational database
-- Create tables
-- Build relationships
-- Insert realistic sample data
-- Write business queries
-- Generate reports
-- Create reusable views
+```bash
+sqlite3 --version
+```
 
----
+## Setup and Run Instructions
 
-## Folder Structure
+From the project root, run the SQL files in this order:
 
-database/
-Contains scripts used to build the database.
+1. [database/01_create_database.sql](database/01_create_database.sql)
+2. [database/02_create_tables.sql](database/02_create_tables.sql)
+3. [database/03_insert_data.sql](database/03_insert_data.sql)
+4. [database/04_constraints.sql](database/04_constraints.sql)
+5. Continue with the query files in [queries](queries) from 05_select.sql onward
 
-queries/
-Contains all SQL exercises.
+Example:
 
-docs/
-Contains supporting documentation such as the ER Diagram.
+```bash
+rm -f /tmp/summertides.db
+sqlite3 /tmp/summertides.db < database/01_create_database.sql
+sqlite3 /tmp/summertides.db < database/02_create_tables.sql
+sqlite3 /tmp/summertides.db < database/03_insert_data.sql
+sqlite3 /tmp/summertides.db < database/04_constraints.sql
+```
 
-presentation/
-Contains your project presentation.
+## Suggested Workflow
 
----
+1. Create the database and schema
+2. Insert sample data
+3. Validate constraints
+4. Complete the SQL exercises in order
+5. Test the views and bonus queries
 
-## Running the Project
+## Team Roles
 
-Execute the SQL files in the following order:
+- Student 1 — Database Architect: designs the schema and table relationships
+- Student 2 — SQL Developer: writes the core query exercises
+- Student 3 — Data Engineer: loads realistic sample data
+- Student 4 — Query Specialist: works on advanced reporting and bonus queries
+- Student 5 — QA Tester: validates scripts and checks for errors
+- Student 6 — Documentation Lead: maintains the README and project documentation
 
-1. 01_create_database.sql
-2. 02_create_tables.sql
-3. 03_insert_data.sql
-4. 04_constraints.sql
-5. Continue through the queries folder.
+## Notes
 
----
-
-## Team Members
-
-| Name | Role |
-|------|------|
-| Student 1 | Database Architect |
-| Student 2 | SQL Developer |
-| Student 3 | Data Engineer |
-| Student 4 | Query Specialist |
-| Student 5 | QA Tester |
-| Student 6 | Documentation Lead |
-
----
-
-Good luck!
-
-The success of SummerTides Festival depends on your database.
+This project is intended to be a practical hands-on exercise in SQL and database design. Clean SQL, clear comments, and correct relationships are important throughout the workflow.
