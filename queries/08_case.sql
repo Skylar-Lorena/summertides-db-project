@@ -31,3 +31,12 @@ SELECT
         ELSE 'Needs Improvement'
     END AS rating_category
 FROM vendors;
+
+SELECT
+    artist_name,
+    country,
+    CASE
+        WHEN country = 'Kenya' THEN 'Local'
+        ELSE 'International'
+    END AS artist_origin
+FROM artists;
