@@ -10,3 +10,5 @@ LEFT JOIN sales s ON v.vendor_id = s.vendor_id
 GROUP BY v.vendor_name;
 
 SELECT * FROM attendee_ticket_summary LIMIT 10;
+
+SELECT * FROM vendor_sales_summary ORDER BY total_sales DESC;
