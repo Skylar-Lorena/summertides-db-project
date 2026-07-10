@@ -8,3 +8,4 @@ USE summertides;
 
 -- Verify that the database was created. 
 SHOW DATABASES LIKE 'summertides';
+-
