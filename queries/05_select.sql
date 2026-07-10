@@ -10,3 +10,11 @@ SELECT first_name,
          last_name,
          email
 FROM attendees
+
+SELECT DISTINCT city
+FROM attendees;
+
+SELECT ticket_type,
+FROM tickets;
+
+
