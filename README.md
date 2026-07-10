@@ -63,15 +63,3 @@ Contains supporting documentation such as the ER Diagram.
 
 presentation/
 Contains your project presentation.
-
----
-
-## Running the Project
-
-Execute the SQL files in the following order:
-
-1. 01_create_database.sql
-2. 02_create_tables.sql
-3. 03_insert_data.sql
-4. 04_constraints.sql
-5. Continue through the queries folder.
