@@ -41,4 +41,6 @@ FROM performances
 WHERE start_time BETWEEN '18:00:00'
                     AND '22:00:00';
 
-                    
+SELECT *
+FROM tickets
+WHERE purchase_date = '2026-06-15';
