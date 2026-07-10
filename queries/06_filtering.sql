@@ -50,3 +50,28 @@ SELECT first_name,
        phone
 FROM attendees
 WHERE phone IS NULL;
+
+SELECT first_name,
+       last_name,
+       city,
+       age
+FROM attendees
+WHERE city = 'Nairobi'
+AND age > 25;
+
+SELECT first_name,
+       last_name,
+       city
+FROM attendees
+WHERE city = 'Nairobi'
+OR city = 'Mombasa';
+
+SELECT first_name,
+       last_name,
+       city
+FROM attendees
+WHERE city IN ('Nairobi', 'Mombasa', 'Kisumu');
+
+SELECT *
+FROM tickets
+WHERE NOT ticket_type = 'Standard';
