@@ -38,3 +38,16 @@ INNER JOIN stages AS st
 SELECT *
 FROM artist_schedule
 ORDER BY performance_date, start_time;
+
+-- Create a reusable view for vendor sales performance.
+DROP VIEW IF EXISTS vendor_sales_summary;
+CREATE VIEW vendor_sales_summary AS
+SELECT
+    v.vendor_name,
+    COUNT(s.sale_id) AS number_of_transactions,
+    COALESCE(AVG(s.amount), 0) AS average_sale_value,
+    COALESCE(SUM(s.amount), 0) AS total_sales
+FROM vendors AS v
+LEFT JOIN sales AS s
+    ON v.vendor_id = s.vendor_id
+GROUP BY v.vendor_id, v.vendor_name;
