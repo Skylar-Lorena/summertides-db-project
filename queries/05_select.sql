@@ -17,4 +17,10 @@ FROM attendees;
 SELECT ticket_type,
 FROM tickets;
 
+SELECT
+    CONCAT(first_name,' ',last_name) AS full_name,
+    email AS contact_email,
+    city AS home_city
+FROM attendees;
+
 
