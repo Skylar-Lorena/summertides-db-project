@@ -165,7 +165,7 @@ INSERT INTO performances (artist_id, stage_id, start_time, end_time, festival_da
 (15, 5, '18:00:00', '19:00:00', '2026-08-15');
  
 
--- Sales (50)
+-- Sales (50),
 -- attendee_id is NOT NULL per the team schema, so every
 -- sale is tied to a real attendee (no anonymous sales here).
 INSERT INTO sales (vendor_id, attendee_id, amount) VALUES
