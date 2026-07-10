@@ -76,3 +76,15 @@ CREATE TABLE sponsors (
     sponsor_name         VARCHAR(100)  NOT NULL UNIQUE,
     contribution_amount  DECIMAL(10,2) NOT NULL CHECK (contribution_amount >= 0)
 );
+
+-- ---------------------------------------------------
+-- Tickets: tickets purchased by attendees
+-- ---------------------------------------------------
+CREATE TABLE tickets (
+    ticket_id     SERIAL PRIMARY KEY,
+    attendee_id   INT           NOT NULL REFERENCES attendees(attendee_id) ON DELETE CASCADE,
+    ticket_type   VARCHAR(20)   NOT NULL CHECK (ticket_type IN ('Standard', 'VIP', 'Backstage')),
+    price         DECIMAL(10,2) NOT NULL CHECK (price >= 0),
+    festival_day  INT           NOT NULL CHECK (festival_day IN (1, 2, 3)),
+    purchase_date DATE          NOT NULL DEFAULT CURRENT_DATE
+);
