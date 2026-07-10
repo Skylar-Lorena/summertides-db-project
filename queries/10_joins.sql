@@ -78,3 +78,19 @@ LEFT JOIN performances AS p
 WHERE p.performance_id IS NULL
 ORDER BY ar.artist_name;
 
+-- 7. Retrieve all performances for a selected festival day.
+SELECT
+    p.performance_id,
+    ar.artist_name,
+    st.stage_name,
+    p.performance_date,
+    p.start_time,
+    p.end_time,
+    p.festival_day
+FROM performances AS p
+INNER JOIN artists AS ar
+    ON p.artist_id = ar.artist_id
+INNER JOIN stages AS st
+    ON p.stage_id = st.stage_id
+WHERE p.festival_day = 'Day 1'
+ORDER BY p.start_time;
