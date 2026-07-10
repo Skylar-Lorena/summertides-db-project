@@ -44,3 +44,9 @@ WHERE start_time BETWEEN '18:00:00'
 SELECT *
 FROM tickets
 WHERE purchase_date = '2026-06-15';
+
+SELECT first_name,
+       last_name,
+       phone
+FROM attendees
+WHERE phone IS NULL;
