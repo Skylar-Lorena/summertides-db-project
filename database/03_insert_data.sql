@@ -45,6 +45,13 @@ INSERT INTO attendees (first_name, last_name, email, phone, city) VALUES
 ('George', 'Muli', 'george.muli@example.com', '+254766777888', 'Machakos'),
 ('Halima', 'Ali', 'halima.ali@example.com', '+254777888999', 'Mombasa');
 
+-- Adds ticket categories and their prices.
+INSERT INTO ticket_types (festival_id, ticket_name, price, access_description) VALUES
+(1, 'General Admission', 4500.00, 'Entry to all general festival areas for one day.'),
+(1, 'Weekend Pass', 11000.00, 'General entry for all three festival days.'),
+(1, 'VIP', 18000.00, 'Three-day entry with VIP viewing deck and lounge access.'),
+(1, 'Day VIP', 7500.00, 'One-day entry with VIP viewing deck access.');
+
 
 
 
