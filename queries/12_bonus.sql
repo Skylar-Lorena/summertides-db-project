@@ -9,3 +9,8 @@ FROM stages st
 LEFT JOIN performances p ON st.stage_id = p.stage_id
 GROUP BY st.stage_name
 ORDER BY performance_count DESC;
+
+SELECT sponsor_name, sponsorship_amount
+FROM sponsors
+WHERE sponsorship_amount > 2500000
+ORDER BY sponsorship_amount DESC;
