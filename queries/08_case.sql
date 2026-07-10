@@ -33,3 +33,13 @@ SELECT
         ELSE 'Senior'
     END AS age_group
 FROM attendees;
+
+-- Artists as Local or International based on country.
+SELECT
+    artist_name,
+    country,
+    CASE
+        WHEN country = 'Kenya' THEN 'Local'
+        ELSE 'International'
+    END AS artist_origin
+FROM artists;
