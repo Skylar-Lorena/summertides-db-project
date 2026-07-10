@@ -30,3 +30,15 @@ WHERE country = 'Kenya';
 SELECT first_name, last_name
 FROM attendees
 WHERE first_name LIKE 'A%';
+
+SELECT performance_id,
+       artist_id,
+       stage_id,
+       festival_day,
+       start_time,
+       end_time
+FROM performances
+WHERE start_time BETWEEN '18:00:00'
+                    AND '22:00:00';
+
+                    
