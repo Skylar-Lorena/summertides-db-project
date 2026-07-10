@@ -112,3 +112,13 @@ CREATE TABLE sales (
     sale_amount DECIMAL(10,2) NOT NULL CHECK (sale_amount >= 0),
     sale_date   DATE          NOT NULL DEFAULT CURRENT_DATE
 );
+
+-- ---------------------------------------------------
+-- Stage_Sponsors: many-to-many join between stages
+--                 and the sponsors that fund them
+-- ---------------------------------------------------
+CREATE TABLE stage_sponsors (
+    stage_id   INT NOT NULL REFERENCES stages(stage_id)   ON DELETE CASCADE,
+    sponsor_id INT NOT NULL REFERENCES sponsors(sponsor_id) ON DELETE CASCADE,
+    PRIMARY KEY (stage_id, sponsor_id)
+);
