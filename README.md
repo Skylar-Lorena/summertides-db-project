@@ -49,17 +49,3 @@ Your team will:
 - Create reusable views
 
 ---
-
-## Folder Structure
-
-database/
-Contains scripts used to build the database.
-
-queries/
-Contains all SQL exercises.
-
-docs/
-Contains supporting documentation such as the ER Diagram.
-
-presentation/
-Contains your project presentation.
