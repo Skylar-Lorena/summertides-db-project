@@ -75,18 +75,3 @@ Execute the SQL files in the following order:
 3. 03_insert_data.sql
 4. 04_constraints.sql
 5. Continue through the queries folder.
-
----
-
-## Team Members
-
-| Name      | Role               |
-| --------- | ------------------ |
-| Student 1 | Database Architect |
-| Student 2 | SQL Developer      |
-| Student 3 | Data Engineer      |
-| Student 4 | Query Specialist   |
-| Student 5 | QA Tester          |
-| Student 6 | Documentation Lead |
-
----
