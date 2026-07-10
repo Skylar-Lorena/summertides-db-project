@@ -1,96 +1,115 @@
-# 🌊 SummerTides Festival Database
+# Summertides DB 
 
-## Welcome
-
-Congratulations!
-
-Your team has been contracted as database engineers for **SummerTides Festival**, one of the largest annual beach festivals in East Africa.
-
-The organizers currently manage everything using spreadsheets.
-
-Unfortunately, duplicate records, missing ticket information, scheduling conflicts, and poor reporting have become a nightmare.
-
-Your mission is to design and build a relational database that will power the entire festival.
+A PostgreSQL database modeling a Kenyan music festival — stages, artists, performances, attendees, tickets, and vendors — built as a Moringa School SQL project.
 
 ---
 
-## The Festival
+##  Requirements
 
-SummerTides is a three-day festival featuring:
-
-- Live music
-- DJs
-- Food vendors
-- Art exhibitions
-- Sponsors
-- Multiple performance stages
-- Thousands of attendees
-
-The organizing committee wants a database that allows them to easily answer questions such as:
-
-- Which artist is performing where?
-- Which attendees bought VIP tickets?
-- Which stage hosted the most performances?
-- Which vendors generated the most sales?
-- Which sponsors funded each stage?
+- PostgreSQL 13 or higher
+- `psql` command-line client (the script uses the `psql`-specific `\c` command to switch databases)
 
 ---
 
-## Project Objectives
+##  Installation
 
-Your team will:
+```bash
+# 1. Save the script (e.g. summertides.sql), then run it with psql
+psql -U your_username -f summertides.sql
+```
 
-- Design a relational database
-- Create tables
-- Build relationships
-- Insert realistic sample data
-- Write business queries
-- Generate reports
-- Create reusable views
+The script drops and recreates `summertides_db` from scratch every time it runs, so it's always safe to re-run for a clean slate.
 
 ---
 
-## Folder Structure
+##  Schema Overview
 
-database/
-Contains scripts used to build the database.
+All tables live in `summertides_db` once the script has been run.
 
-queries/
-Contains all SQL exercises.
+### Core Tables
 
-docs/
-Contains supporting documentation such as the ER Diagram.
+| Table | Description |
+|---|---|
+| `stages` | Festival venues — name, location, capacity |
+| `artists` | Performing artists — name, genre, country |
+| `performances` | Links an artist to a stage, date, and start time |
+| `attendees` | Festival-goers — name, email, phone |
+| `tickets` | Ticket purchases — linked to an attendee, with tier, price, and purchase date |
+| `vendors` | Food/beverage/merch stalls — name, business type, stall number |
 
-presentation/
-Contains your project presentation.
+### Relationships
 
----
-
-## Running the Project
-
-Execute the SQL files in the following order:
-
-1. 01_create_database.sql
-2. 02_create_tables.sql
-3. 03_insert_data.sql
-4. 04_constraints.sql
-5. Continue through the queries folder.
+| Table | Foreign Keys |
+|---|---|
+| `performances` | `artist_id` → `artists`, `stage_id` → `stages` |
+| `tickets` | `attendee_id` → `attendees` |
+| `vendors` | *(none — currently standalone)* |
 
 ---
 
-## Team Members
+##  Examples
 
-| Name | Role |
-|------|------|
-| Student 1 | Database Architect |
-| Student 2 | SQL Developer |
-| Student 3 | Data Engineer |
-| Student 4 | Query Specialist |
-| Student 5 | QA Tester |
-| Student 6 | Documentation Lead |
+### Viewing the festival schedule
+
+```sql
+SELECT a.artist_name, s.stage_name, p.performance_date, p.start_time
+FROM performances p
+JOIN artists a ON p.artist_id = a.artist_id
+JOIN stages s ON p.stage_id = s.stage_id
+ORDER BY p.performance_date, p.start_time;
+```
+
+### Checking total ticket revenue
+
+```sql
+SELECT SUM(price) AS total_revenue FROM tickets;
+```
+
+### Finding attendees without a ticket
+
+```sql
+SELECT a.first_name, a.last_name
+FROM attendees a
+LEFT JOIN tickets t ON a.attendee_id = t.attendee_id
+WHERE t.ticket_id IS NULL;
+```
 
 ---
 
-Good luck!
+##  Seed Data Included
 
-The success of SummerTides Festival depends on your database.
+| Category | Count | Notes |
+|---|---|---|
+| Stages | 4 | Capacities range from 1,500 to 10,000 |
+| Artists | 6 | Sauti Sol, Khaligraph Jones, Bensoul, Nadia Mukami, Buruklyn Boyz, Nikita Kering |
+| Performances | 5 | All dated Dec 12–13, 2026 (Jamhuri Day weekend) — note that Nadia Mukami has no scheduled performance |
+| Attendees | 5 | Mix of Moringa School and personal emails |
+| Tickets | 5 | Priced in KES, 2,000–10,000 |
+| Vendors | 5 | Food, beverage, and merchandise stalls |
+
+---
+
+## Business Rules — Verification Status
+
+The script adds six `CHECK`/`UNIQUE` constraints after the tables and data are loaded. **Only 3 of the 6 will run successfully** — the rest reference tables or columns that don't exist yet, and Postgres will error out on them rather than skip them silently.
+
+| # | Rule | Status |
+|---|---|---|
+| 1 | Attendee emails must be unique |  Works |
+| 2 | Ticket type restricted to VIP/Regular/Student |  Fails — targets `attendees.ticket_type`, which doesn't exist (tier info is in `tickets.ticket_tier`) |
+| 3 | Stage capacity must be positive | Works |
+| 4 | Vendor sale amounts can't be negative |  Fails — no `sales` table exists |
+| 5 | Sponsor contributions must be positive |  Fails — no `sponsors` table exists |
+| 6 | Performance end time must be after start time | Fails — `performances` has no `end_time` column |
+
+Run the script section by section rather than all at once if you want to catch exactly where it stops.
+
+---
+
+##  Notes & Known Gaps
+
+- Vendors aren't linked to stages, performances, or a schedule yet.
+- No `sponsors` table exists, despite Rule 5 assuming one.
+- `ticket_tier` is free text (e.g. `"VIP Golden Circle"`) rather than a fixed set of values.
+- Nothing currently prevents selling more tickets than a stage's capacity.
+- Prices are stored as plain `NUMERIC` — Kenyan Shillings is implied by context, not enforced.
