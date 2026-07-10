@@ -18,3 +18,18 @@ This project completely replaces those legacy spreadsheets with a centralized, s
 - **Localized Sample Data:** Features a robust data pipeline populated with realistic, regional records reflecting local artists, regional currency variables, and East African coastal festival dynamics.
 
 ---
+
+## 📂 Project Architecture & Execution Sequence
+
+To deploy the database infrastructure smoothly and prevent runtime, relational, or foreign-key assignment errors, you must execute the scripts in the exact sequence outlined below:
+
+### 📑 Phase 1: Database Setup and Schema Initialization
+
+1.  **`database/01_create_database.sql`**  
+    Initializes the core database cluster and configures environmental parameters.
+2.  **`database/02_create_tables.sql`**  
+    Generates the structural table blueprints (including `Artists`, `Stages`, `Attendees`, `Tickets`, `Vendors`, and `Sponsors`) along with primary keys.
+3.  **`database/03_insert_data.sql`**  
+    Seeds the structural database tables with comprehensive, realistic, and localized mock data records.
+4.  **`database/04_constraints.sql`**  
+    Enforces referential integrity, foreign key relations, unique parameters, and operational validation bounds.
