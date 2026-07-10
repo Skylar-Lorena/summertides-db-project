@@ -1,49 +1,40 @@
--- =====================================================================
--- File: 05_select.sql
--- Topic: Basic SELECT statements
--- Author: Wayne Kiptoo (Query Specialist)
--- =====================================================================
 
--- 1. Display all attendees.
+-- Display all attendees.
 SELECT *
 FROM attendees;
 
-
--- 2. Display all artists.
+-- Display all artists.
 SELECT *
 FROM artists;
 
-
--- 3. Display attendee names and email addresses.
+-- Show attendee names and email addresses.
 SELECT
     first_name || ' ' || last_name AS attendee_name,
     email
 FROM attendees;
 
-
--- 4. Display unique cities where attendees come from.
-SELECT DISTINCT city
-FROM attendees;
-
-
--- 5. Display attendee details with friendly column names.
-SELECT
-    first_name || ' ' || last_name AS attendee_name,
-    email AS contact_email,
-    city AS home_city
-FROM attendees;
-
-
--- 6. Retrieve all ticket types available.
+-- Display all unique ticket types.
 SELECT DISTINCT ticket_type
 FROM tickets;
 
+-- Show attendee names with their phone numbers.
+SELECT
+    first_name || ' ' || last_name AS attendee_name,
+    phone_number
+FROM attendees;
 
--- 7. Display all vendors.
+-- Display all sponsors.
+SELECT *
+FROM sponsors;
+
+-- Display all vendors.
 SELECT *
 FROM vendors;
 
-
--- 8. Display all stages.
-SELECT *
+-- Display all stages.
+SELECT
+    stage_id,
+    student_name,
+    location,
+    capacity
 FROM stages;

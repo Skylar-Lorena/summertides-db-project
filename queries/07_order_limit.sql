@@ -1,30 +1,24 @@
--- File: 07_order_limit.sql
--- Topic: Sorting and limiting results
 
--- Display attendees alphabetically
 SELECT
     first_name || ' ' || last_name AS attendee_name
 FROM attendees
-ORDER BY first_name ASC;
+ORDER BY first_name, last_name;
 
-
--- Show artists ordered by genre
+-- Show artists ordered by genre.
 SELECT
-    artist_name,
+    name,
     genre
 FROM artists
-ORDER BY genre ASC;
+ORDER BY genre;
 
-
--- List vendors from highest to lowest rating
+-- List vendors alphabetically.
 SELECT
     vendor_name,
-    rating
+    vendor_type
 FROM vendors
-ORDER BY rating DESC;
+ORDER BY vendor_name;
 
-
--- Display the five most expensive ticket purchases
+-- Display the five most expensive tickets.
 SELECT
     ticket_id,
     attendee_id,
@@ -34,18 +28,15 @@ FROM tickets
 ORDER BY price DESC
 LIMIT 5;
 
-
--- Show the first ten attendees
+-- Show the first ten attendees.
 SELECT
     first_name || ' ' || last_name AS attendee_name,
-    city,
-    country
+    email
 FROM attendees
-ORDER BY first_name ASC
+ORDER BY first_name
 LIMIT 10;
 
-
--- Display the latest ticket purchases
+-- Display the latest ticket purchases.
 SELECT
     ticket_id,
     attendee_id,
@@ -54,20 +45,18 @@ FROM tickets
 ORDER BY purchase_date DESC
 LIMIT 10;
 
-
--- Retrieve the top three highest-rated vendors
+-- Show the first three sponsors with the highest contributions.
 SELECT
-    vendor_name,
-    rating
-FROM vendors
-ORDER BY rating DESC
+    sponsor_name,
+    contribution_amount
+FROM sponsors
+ORDER BY contribution_amount DESC
 LIMIT 3;
 
-
--- Skip the top three vendors and show the next three
+-- Skip the top three sponsors and show the next three.
 SELECT
-    vendor_name,
-    rating
-FROM vendors
-ORDER BY rating DESC
+    sponsor_name,
+    contribution_amount
+FROM sponsors
+ORDER BY contribution_amount DESC
 LIMIT 3 OFFSET 3;

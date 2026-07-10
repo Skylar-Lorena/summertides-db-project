@@ -1,38 +1,37 @@
--- File: 08_case.sql
--- Topic: CASE statements for data categorization
 
 
--- Categorize customers based on ticket type
+
+-- Categorize customers based on ticket type.
 SELECT
     attendee_id,
     ticket_type,
     CASE
         WHEN ticket_type = 'VIP' THEN 'Premium'
-        WHEN ticket_type = 'Group' THEN 'Group Buyer'
+        WHEN ticket_type = 'student' THEN 'Student'
         ELSE 'Regular'
     END AS customer_type
 FROM tickets;
 
 
--- Categorize vendors based on their ratings
+-- Categorize vendors based on vendor type.
 SELECT
     vendor_name,
-    rating,
+    vendor_type,
     CASE
-        WHEN rating >= 4.5 THEN 'Excellent'
-        WHEN rating >= 4 THEN 'Good'
-        ELSE 'Average'
-    END AS rating_category
+        WHEN vendor_type = 'Food' THEN 'Food Vendor'
+        WHEN vendor_type = 'Drinks' THEN 'Drink Vendor'
+        ELSE 'Other Vendor'
+    END AS vendor_category
 FROM vendors;
 
 
--- Categorize artists based on booking fees
+-- Categorize artists based on their genre.
 SELECT
-    artist_name,
-    booking_fee,
+    name,
+    genre,
     CASE
-        WHEN booking_fee >= 300000 THEN 'High Budget'
-        WHEN booking_fee >= 150000 THEN 'Medium Budget'
-        ELSE 'Low Budget'
-    END AS artist_level
+        WHEN genre IN ('EDM', 'Electronic') THEN 'Electronic Music'
+        WHEN genre IN ('Rock', 'Pop') THEN 'Modern Music'
+        ELSE 'Other Genre'
+    END AS music_category
 FROM artists;

@@ -1,31 +1,50 @@
--- File: 06_filtering.sql
--- Topic: Filtering data using WHERE
 
--- Find all VIP tickets
+-- Find all VIP tickets.
 SELECT *
 FROM tickets
 WHERE ticket_type = 'VIP';
 
-
--- Find artists from Kenya
+-- Find artists whose name starts with "D".
 SELECT *
 FROM artists
-WHERE country = 'Kenya';
+WHERE name LIKE 'D%';
 
-
--- Find vendors with a rating above 4
+-- Find vendors of type Food.
 SELECT *
 FROM vendors
-WHERE rating > 4;
+WHERE vendor_type = 'Food';
 
-
--- Find attendees from Nairobi
+-- Find attendees with a phone number.
 SELECT *
 FROM attendees
-WHERE city = 'Nairobi';
+WHERE phone_number IS NOT NULL;
 
+-- Find attendees without a phone number.
+SELECT *
+FROM attendees
+WHERE phone_number IS NULL;
 
--- Find tickets costing more than 10000
+-- Find tickets costing more than 10000.
 SELECT *
 FROM tickets
 WHERE price > 10000;
+
+-- Find tickets that cost between 5000 and 10000.
+SELECT *
+FROM tickets
+WHERE price BETWEEN 5000 AND 10000;
+
+-- Find performances that start after 6:00 PM.
+SELECT *
+FROM performances
+WHERE start_time > '18:00:00';
+
+-- Find sponsors contributing more than 1000000.
+SELECT *
+FROM sponsors
+WHERE contribution_amount > 1000000;
+
+-- Find tickets that are either VIP or Regular.
+SELECT *
+FROM tickets
+WHERE ticket_type IN ('VIP', 'Regular');
