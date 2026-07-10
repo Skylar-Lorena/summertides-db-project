@@ -1,80 +1,94 @@
--- Create the festival tables for artists, stages, sponsors, performances, attendees, vendors, and sales.
-CREATE TABLE IF NOT EXISTS Artists (
-  artist_id INTEGER PRIMARY KEY AUTOINCREMENT,
-  artist_name TEXT NOT NULL UNIQUE,
-  genre TEXT NOT NULL,
-  origin_country TEXT NOT NULL,
-  primary_contact_email TEXT NOT NULL UNIQUE,
-  performance_style TEXT NOT NULL
+-- This script builds the festival database schema for the assessment.
+-- It creates all required tables and links them with keys and constraints to model the domain accurately.
+PRAGMA foreign_keys = ON;
+
+DROP TABLE IF EXISTS stage_sponsors;
+DROP TABLE IF EXISTS sales;
+DROP TABLE IF EXISTS tickets;
+DROP TABLE IF EXISTS performances;
+DROP TABLE IF EXISTS sponsors;
+DROP TABLE IF EXISTS vendors;
+DROP TABLE IF EXISTS stages;
+DROP TABLE IF EXISTS artists;
+DROP TABLE IF EXISTS attendees;
+
+CREATE TABLE attendees (
+    attendee_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    full_name TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    phone TEXT,
+    city TEXT NOT NULL,
+    age INTEGER NOT NULL CHECK (age >= 0),
+    registration_date TEXT NOT NULL DEFAULT CURRENT_DATE
 );
 
-CREATE TABLE IF NOT EXISTS Stages (
-  stage_id INTEGER PRIMARY KEY AUTOINCREMENT,
-  stage_name TEXT NOT NULL UNIQUE,
-  capacity INTEGER NOT NULL CHECK(capacity > 0),
-  location TEXT NOT NULL
+CREATE TABLE tickets (
+    ticket_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ticket_type TEXT NOT NULL CHECK (ticket_type IN ('General', 'VIP', 'Weekend Pass', 'Student')),
+    price REAL NOT NULL CHECK (price >= 0),
+    purchase_date TEXT NOT NULL DEFAULT CURRENT_DATE,
+    attendee_id INTEGER NOT NULL,
+    FOREIGN KEY (attendee_id) REFERENCES attendees(attendee_id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS Sponsors (
-  sponsor_id INTEGER PRIMARY KEY AUTOINCREMENT,
-  sponsor_name TEXT NOT NULL UNIQUE,
-  sponsorship_level TEXT NOT NULL CHECK(sponsorship_level IN ('Platinum','Gold','Silver','Bronze')),
-  contribution_amount REAL NOT NULL CHECK(contribution_amount >= 0),
-  contact_email TEXT NOT NULL UNIQUE
+CREATE TABLE artists (
+    artist_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    artist_name TEXT NOT NULL,
+    genre TEXT NOT NULL,
+    country TEXT NOT NULL,
+    is_local INTEGER NOT NULL DEFAULT 1 CHECK (is_local IN (0, 1))
 );
 
-CREATE TABLE IF NOT EXISTS StageSponsors (
-  stage_sponsor_id INTEGER PRIMARY KEY AUTOINCREMENT,
-  stage_id INTEGER NOT NULL,
-  sponsor_id INTEGER NOT NULL,
-  sponsorship_share INTEGER NOT NULL DEFAULT 100 CHECK(sponsorship_share BETWEEN 10 AND 100),
-  FOREIGN KEY(stage_id) REFERENCES Stages(stage_id) ON DELETE CASCADE,
-  FOREIGN KEY(sponsor_id) REFERENCES Sponsors(sponsor_id) ON DELETE CASCADE,
-  UNIQUE(stage_id, sponsor_id)
+CREATE TABLE stages (
+    stage_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    stage_name TEXT NOT NULL UNIQUE,
+    location TEXT NOT NULL,
+    capacity INTEGER NOT NULL CHECK (capacity > 0)
 );
 
-CREATE TABLE IF NOT EXISTS Performances (
-  performance_id INTEGER PRIMARY KEY AUTOINCREMENT,
-  artist_id INTEGER NOT NULL,
-  stage_id INTEGER NOT NULL,
-  performance_day TEXT NOT NULL CHECK(performance_day IN ('Friday','Saturday','Sunday')),
-  start_time TEXT NOT NULL,
-  end_time TEXT NOT NULL,
-  is_headliner INTEGER NOT NULL DEFAULT 0 CHECK(is_headliner IN (0,1)),
-  ticket_price REAL NOT NULL CHECK(ticket_price >= 0),
-  FOREIGN KEY(artist_id) REFERENCES Artists(artist_id),
-  FOREIGN KEY(stage_id) REFERENCES Stages(stage_id),
-  UNIQUE(stage_id, performance_day, start_time)
+CREATE TABLE performances (
+    performance_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    performance_name TEXT NOT NULL,
+    festival_day TEXT NOT NULL CHECK (festival_day IN ('Day 1', 'Day 2', 'Day 3')),
+    performance_time TEXT NOT NULL,
+    artist_id INTEGER NOT NULL,
+    stage_id INTEGER NOT NULL,
+    FOREIGN KEY (artist_id) REFERENCES artists(artist_id) ON DELETE CASCADE,
+    FOREIGN KEY (stage_id) REFERENCES stages(stage_id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS Attendees (
-  attendee_id INTEGER PRIMARY KEY AUTOINCREMENT,
-  first_name TEXT NOT NULL,
-  last_name TEXT NOT NULL,
-  email TEXT NOT NULL UNIQUE,
-  phone TEXT NOT NULL UNIQUE,
-  ticket_type TEXT NOT NULL CHECK(ticket_type IN ('General','VIP','Backstage','Student')),
-  purchase_date TEXT NOT NULL DEFAULT (date('now')),
-  ticket_price REAL NOT NULL CHECK(ticket_price >= 0),
-  checked_in INTEGER NOT NULL DEFAULT 0 CHECK(checked_in IN (0,1))
+CREATE TABLE vendors (
+    vendor_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    vendor_name TEXT NOT NULL,
+    category TEXT NOT NULL,
+    contact_email TEXT NOT NULL UNIQUE,
+    rating REAL NOT NULL CHECK (rating BETWEEN 0 AND 5)
 );
 
-CREATE TABLE IF NOT EXISTS Vendors (
-  vendor_id INTEGER PRIMARY KEY AUTOINCREMENT,
-  vendor_name TEXT NOT NULL UNIQUE,
-  category TEXT NOT NULL CHECK(category IN ('Food','Drink','Merch','Art')),
-  booth_number TEXT NOT NULL UNIQUE,
-  contact_person TEXT NOT NULL,
-  booth_rent REAL NOT NULL CHECK(booth_rent >= 0)
+CREATE TABLE sales (
+    sale_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    sale_date TEXT NOT NULL DEFAULT CURRENT_DATE,
+    amount REAL NOT NULL CHECK (amount >= 0),
+    vendor_id INTEGER NOT NULL,
+    attendee_id INTEGER NOT NULL,
+    FOREIGN KEY (vendor_id) REFERENCES vendors(vendor_id) ON DELETE CASCADE,
+    FOREIGN KEY (attendee_id) REFERENCES attendees(attendee_id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS VendorSales (
-  sale_id INTEGER PRIMARY KEY AUTOINCREMENT,
-  vendor_id INTEGER NOT NULL,
-  sale_date TEXT NOT NULL,
-  item_sold TEXT NOT NULL,
-  quantity INTEGER NOT NULL CHECK(quantity > 0),
-  sale_amount REAL NOT NULL CHECK(sale_amount >= 0),
-  FOREIGN KEY(vendor_id) REFERENCES Vendors(vendor_id),
-  UNIQUE(vendor_id, sale_date, item_sold)
+CREATE TABLE sponsors (
+    sponsor_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    sponsor_name TEXT NOT NULL,
+    industry TEXT NOT NULL,
+    sponsorship_amount REAL NOT NULL CHECK (sponsorship_amount >= 0)
 );
+
+CREATE TABLE stage_sponsors (
+    stage_sponsor_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    stage_id INTEGER NOT NULL,
+    sponsor_id INTEGER NOT NULL,
+    UNIQUE (stage_id, sponsor_id),
+    FOREIGN KEY (stage_id) REFERENCES stages(stage_id) ON DELETE CASCADE,
+    FOREIGN KEY (sponsor_id) REFERENCES sponsors(sponsor_id) ON DELETE CASCADE
+);
+
+SELECT 'Tables created successfully' AS status;
