@@ -14,3 +14,7 @@ ALTER TABLE performances
 -- A stage cannot host two performances at the same time on the same day.
 ALTER TABLE performances
     ADD CONSTRAINT uq_stage_day_time UNIQUE (stage_id, festival_day, start_time);
+
+-- Basic sanity check that emails look like emails.
+ALTER TABLE attendees
+    ADD CONSTRAINT chk_email_format CHECK (email LIKE '%_@_%._%');
