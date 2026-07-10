@@ -73,6 +73,13 @@ INSERT INTO vendor_sales (vendor_id, sale_date, sales_amount, transactions) VALU
 (3, '2026-12-18', 98000.00, 95), (3, '2026-12-19', 154000.00, 143), (3, '2026-12-20', 121500.00, 110),
 (4, '2026-12-18', 75000.00, 28), (4, '2026-12-19', 106000.00, 37), (4, '2026-12-20', 89000.00, 31);
 
+-- Adds sponsor organizations.
+INSERT INTO sponsors (sponsor_name, industry, contact_email) VALUES
+('Safaricom', 'Telecommunications', 'partnerships@safaricom.example'),
+('Tusker', 'Beverages', 'events@tusker.example'),
+('Kenya Airways', 'Aviation', 'sponsorships@kenyaairways.example'),
+('Equity Bank', 'Financial Services', 'events@equity.example');
+
 
 
 
