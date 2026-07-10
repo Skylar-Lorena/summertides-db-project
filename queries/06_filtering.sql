@@ -22,3 +22,11 @@ WHERE price > 5000;
 SELECT vendor_name, category, rating
 FROM vendors
 WHERE rating > 4;
+
+SELECT artist_name, genre, country
+FROM artists
+WHERE country = 'Kenya';
+
+SELECT first_name, last_name
+FROM attendees
+WHERE first_name LIKE 'A%';
