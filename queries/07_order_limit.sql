@@ -1,7 +1,4 @@
 
--- SummerTides Festival Database
--- Purpose: Sort and limit result sets using ORDER BY, ASC, DESC,
---          LIMIT, and OFFSET.
 
 USE summertides;
 

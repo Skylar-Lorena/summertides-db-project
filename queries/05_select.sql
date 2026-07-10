@@ -1,7 +1,4 @@
 
--- SummerTides Festival Database
--- Purpose: Basic SELECT queries retrieving information from individual
---          tables. Demonstrates SELECT, SELECT *, DISTINCT, and aliases.
 
 USE summertides;
 
