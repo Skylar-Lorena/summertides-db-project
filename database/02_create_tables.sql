@@ -1,4 +1,4 @@
--- 1. STAGES TABLE (Base table)
+-- 1. STAGES TABLE 
 CREATE TABLE stages (
     stage_id INT GENERATED ALWAYS AS IDENTITY,
     stage_name VARCHAR(100),
