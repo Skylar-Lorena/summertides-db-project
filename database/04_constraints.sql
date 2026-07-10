@@ -9,3 +9,7 @@ PRAGMA foreign_keys = ON;
 -- An artist cannot be double-booked at the same time on the same day.
 CREATE UNIQUE INDEX idx_uq_artist_day_time
     ON performances(artist_id, festival_day, start_time);
+
+-- A stage cannot host two performances at the same time on the same day.
+CREATE UNIQUE INDEX idx_uq_stage_day_time
+    ON performances(stage_id, festival_day, start_time);
