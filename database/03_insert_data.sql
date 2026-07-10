@@ -52,6 +52,15 @@ INSERT INTO ticket_types (festival_id, ticket_name, price, access_description) V
 (1, 'VIP', 18000.00, 'Three-day entry with VIP viewing deck and lounge access.'),
 (1, 'Day VIP', 7500.00, 'One-day entry with VIP viewing deck access.');
 
+-- Records ticket purchases made by attendees.
+INSERT INTO ticket_purchases (attendee_id, ticket_type_id, purchase_date, quantity) VALUES
+(1, 3, '2026-10-01', 1), (2, 2, '2026-10-03', 2),
+(3, 1, '2026-10-04', 1), (4, 4, '2026-10-05', 1),
+(5, 3, '2026-10-08', 1), (6, 2, '2026-10-10', 1),
+(7, 1, '2026-10-12', 3), (8, 4, '2026-10-15', 2);
+
+
+
 
 
 
