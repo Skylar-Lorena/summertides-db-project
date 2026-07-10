@@ -20,3 +20,18 @@ SELECT *
 FROM vip_attendees
 ORDER BY last_name, first_name;
 
+-- Create a reusable view for the artist performance schedule.
+DROP VIEW IF EXISTS artist_schedule;
+CREATE VIEW artist_schedule AS
+SELECT
+    ar.artist_name,
+    st.stage_name,
+    p.performance_date,
+    p.start_time,
+    p.end_time
+FROM performances AS p
+INNER JOIN artists AS ar
+    ON p.artist_id = ar.artist_id
+INNER JOIN stages AS st
+    ON p.stage_id = st.stage_id;
+
