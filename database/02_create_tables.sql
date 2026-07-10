@@ -1,9 +1,3 @@
-<<<<<<< HEAD
--- ==========================================
--- 02: CORE TABLE STRUCTURES
--- ==========================================
-
-
 -- 1. STAGES TABLE 
 CREATE TABLE stages (
     stage_id INT GENERATED ALWAYS AS IDENTITY,

@@ -1,12 +1,3 @@
-<<<<<<< HEAD
--- =====================================================
--- 05_SELECT.SQL: QA TEST SUITE & DATA VERIFICATION
--- =====================================================
-
--- -----------------------------------------------------
--- PART 1: VERIFICATION TESTS (Must return data rows)
--- -----------------------------------------------------
-
 -- Test 1: Verify Edwin's inserts successfully loaded into your tables
 SELECT 'stages' AS table_check, COUNT(*) FROM stages
 UNION ALL

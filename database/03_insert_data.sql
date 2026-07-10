@@ -1,7 +1,3 @@
--- ==========================================
--- MORINGA SCHOOL: FESTIVAL DB KENYAN EDITION
--- ==========================================
-
 -- 1. STAGES (Popular Kenyan Event Venues/Stages)
 INSERT INTO stages (stage_name, location, capacity) VALUES
 ('Ngong Racecourse Main Stage', 'Ngong Road', 10000),
