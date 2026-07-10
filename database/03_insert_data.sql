@@ -66,6 +66,14 @@ INSERT INTO vendors (festival_id, vendor_name, vendor_category, contact_name, ph
 (1, 'Kanga Culture', 'Merchandise', 'Zawadi Achieng', '+254703300400'),
 (1, 'Sea Glass Gallery', 'Art', 'Liam Kariuki', '+254704400500');
 
+-- Adds daily sales reports from each vendor.
+INSERT INTO vendor_sales (vendor_id, sale_date, sales_amount, transactions) VALUES
+(1, '2026-12-18', 185000.00, 310), (1, '2026-12-19', 246500.00, 398), (1, '2026-12-20', 201000.00, 340),
+(2, '2026-12-18', 132000.00, 420), (2, '2026-12-19', 176500.00, 518), (2, '2026-12-20', 144000.00, 450),
+(3, '2026-12-18', 98000.00, 95), (3, '2026-12-19', 154000.00, 143), (3, '2026-12-20', 121500.00, 110),
+(4, '2026-12-18', 75000.00, 28), (4, '2026-12-19', 106000.00, 37), (4, '2026-12-20', 89000.00, 31);
+
+
 
 
 
