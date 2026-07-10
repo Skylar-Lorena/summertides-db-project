@@ -26,3 +26,9 @@ SELECT ar.artist_name
 FROM artists ar
 LEFT JOIN performances p ON ar.artist_id = p.artist_id
 WHERE p.performance_id IS NULL;
+
+SELECT p.performance_name, p.festival_day, ar.artist_name, s.stage_name
+FROM performances p
+JOIN artists ar ON p.artist_id = ar.artist_id
+JOIN stages s ON p.stage_id = s.stage_id
+WHERE p.festival_day = 'Day 2';
