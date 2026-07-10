@@ -10,3 +10,6 @@ SELECT artist_name, genre
 FROM artists
 ORDER BY genre ASC;
 
+SELECT vendor_name, rating
+FROM vendors
+ORDER BY rating DESC;
