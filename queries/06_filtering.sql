@@ -1,7 +1,4 @@
 
--- SummerTides Festival Database
--- Purpose: Answer business questions by filtering rows with WHERE,
---          AND, OR, NOT, BETWEEN, LIKE, IN, and IS NULL.
 
 USE summertides;
 
