@@ -41,3 +41,9 @@ SELECT vendor_name,
 FROM vendors
 ORDER BY rating DESC
 LIMIT 3;
+
+SELECT vendor_name,
+       rating
+FROM vendors
+ORDER BY rating DESC
+LIMIT 2 OFFSET 3;
