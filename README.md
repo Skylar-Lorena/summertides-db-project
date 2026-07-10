@@ -1,60 +1,158 @@
-# 🌊 SummerTides Festival Relational Database System
+🌊 SummerTides Festival Database Management System
 
-## Project Overview
+An enterprise-grade relational database schema engineered in SQLite3 to power the backend operations, scheduling, ticket administration, sponsor allocations, and vendor sales points for the annual SummerTides Music Festival.
 
-The SummerTides Festival Database System is a production-ready relational database engineered to streamline the operations of a premier three-day music, arts, and cultural festival in East Africa.
+This project provides a robust, index-optimized database structure designed to handle high-throughput transactions, dynamic scheduling conflicts, and multi-entity financial audits.
 
-Previously, festival organizers managed logistics, ticketing, artist schedules, and financial transactions using disconnected spreadsheets. This outdated approach led to critical operational challenges, including duplicate records, unverified ticket sales, scheduling conflicts, and inaccurate financial reporting.
+📂 Project Directory Structure
 
-This project completely replaces those legacy spreadsheets with a centralized, scalable SQL database. The new system automates data management, secures transactional integrity, and provides real-time business intelligence to festival coordinators.
+Our repository is strictly organized to maintain clean separation of concerns between database creation, validation, performance tuning, and business intelligence queries.
 
----
+SUMMERTIDES-DB-PROJECT/
+├── database/
+│ ├── 01_create_database.sql # Database initialization
+│ ├── 02_create_tables.sql # Core table schemas & types (Wayne Kiptoo)
+│ ├── 03_insert_data.sql # Mock datasets for simulation
+│ └── 04_constraints.sql # Integrity limits & performance indexes (Brigit Njoroge)
+├── docs/
+│ ├── data_dictionary.md # Comprehensive entity-relationship breakdown
+│ └── ERD.png # Entity-relationship visualization diagram
+├── presentation/
+│ └── summertides_presentation.html # Modern browser-based slide deck
+├── queries/
+│ ├── 01_create_database.sql
+│ ├── 02_create_tables.sql
+│ ├── 03_insert_data.sql
+│ ├── 04_constraints.sql
+│ ├── 05_select.sql
+│ ├── 06_filtering.sql
+│ ├── 07_order_limit.sql
+│ ├── 08_case.sql
+│ ├── 09_group_by.sql
+│ ├── 10_joins.sql # Relational link querying (Tables connected)
+│ ├── 11_views.sql # Abstract reporting layers
+│ └── 12_bonus.sql # Aggregations, statistics & core insights
+├── lesson.md # Educational takeaways and process reflections
+└── README.md # Main documentation portal (this file)
 
-## Core Features & Engineering Solutions
+🛠️ Relational Schema Design
 
-- **Automated Scheduling and Conflict Resolution:** Implements structural constraints that eliminate the risk of double-booking artists or over-allocating performance stages.
-- **Scalable Core Architecture:** Connects complex operational dimensions—including multi-tier ticketing systems, vendor revenue tracking, stage sponsorships, and artist timetables—into a single, unified schema.
-- **Business Intelligence (BI) Reporting:** Features pre-compiled SQL views and complex analytical queries that instantly generate administrative reports, including vendor performance metrics, VIP revenue yields, and stage capacity audits.
-- **Localized Sample Data:** Features a robust data pipeline populated with realistic, regional records reflecting local artists, regional currency variables, and East African coastal festival dynamics.
+The SummerTides database tracks nine core entities connected through explicit, cascade-safe relational keys:
 
----
+               [ Sponsors ]             [ Attendees ]
+                    │                         │
+                    ▼                         ▼
 
-## Project Architecture & Execution Sequence
+[ Stages ] ◄── [ Stage Sponsorships ] [ Tickets ]
+▲
+│
+[ Performances ] ◄── [ Artists ] [ Vendors ]
+│
+▼
+[ Sales ]
 
-To deploy the database infrastructure smoothly and prevent runtime, relational, or foreign-key assignment errors, you must execute the scripts in the exact sequence outlined below:
+Table Overview
 
-### Phase 1: Database Setup and Schema Initialization
+stages: Festival venues with specific geographic locations and enforced positive capacity safety guidelines (CHECK (capacity > 0)).
 
-1.  **`database/01_create_database.sql`**  
-    Initializes the core database cluster and configures environmental parameters.
-2.  **`database/02_create_tables.sql`**  
-    Generates the structural table blueprints (including `Artists`, `Stages`, `Attendees`, `Tickets`, `Vendors`, and `Sponsors`) along with primary keys.
-3.  **`database/03_insert_data.sql`**  
-    Seeds the structural database tables with comprehensive, realistic, and localized mock data records.
-4.  **`database/04_constraints.sql`**  
-    Enforces referential integrity, foreign key relations, unique parameters, and operational validation bounds.
+artists: Performing individuals/groups along with designated booking and management contacts.
 
-### Phase 2: Analytical Queries & Administrative Reporting
+attendees: Guest profiles secured with unique email constraint checking.
 
-Execute the operations inside the `queries/` directory sequentially from **`05_select.sql` through `12_bonus.sql`**. These scripts pull critical administrative insights, ranging from basic data segmenting filters and multi-table joins to complex conditional logic mapping and revenue aggregations.
+vendors: Authorized commercial entities operating on festival grounds.
 
----
+sponsors: Corporate partners contributing to overall festival funding.
 
-## 👥 Engineering Team & Roles
+performances: Schedules mapping artists to specific stages with chronologically validated boundaries (CHECK (end_time > start_time)).
 
-| Full Name | Project Role | Core Contributions & Responsibilities |
+tickets: Pass distributions validating purchase categories (Regular, VIP, student) and non-negative pricing matrices.
 
-| **Faith Kiruku** | Database Architect | Orchestrated conceptual schema modeling and mapped out the official Entity-Relationship Diagram (ERD). |
-| **Ilhan Mohamud** | SQL Developer | Implemented structural table frameworks, configured DDL scripts, and mapped data control keys. |
-| **Brigit Njoroge** | Data Engineer | Programmed the data injection pipeline and generated realistic regional database mock records. |
-| **Wayne Kiptoo** | Query Specialist | Authored advanced data retrieval scripts, tactical business analytics, and reusable organizational views. |
-| **Gad Ontune** | QA Tester | Audited relational dependencies, verified script execution orders, and managed stress-testing operations. |
-| **Abdinasir Osman** | Documentation Lead | Formatted the repository layout, authored technical data dictionaries, and developed the final project presentation. |
+sales: Microtransaction points logging vendor receipts, strictly maintaining minimum inventory counts.
 
----
+stage_sponsorships: Financial allocations mapping corporate backing directly to target performance venues.
 
-## 🚀 Deployment Instructions
+🧪 Quality Assurance & Relational Analysis
 
-1. Clone this repository to your local machine.
-2. Open your preferred SQL database management interface or command-line terminal.
-3. Execute the scripts in the exact numerical order listed in the execution sequence above to build a stable, conflict-free deployment.
+During the compilation of our database documentation, our engineering team successfully analyzed, audited, and resolved architectural gaps:
+
+Unique Key Management: Replaced standard custom constraints with native SQLite UNIQUE INDEX controls to enforce zero-duplicate registration criteria.
+
+Integrity Guardrails: Discovered and synchronized minor structural differences in column names across the SQL files (sale_time vs sale_date and contact_email fields) to ensure continuous, error-free query compilation.
+
+🚀 Installation & Execution Guide
+
+Follow these steps to initialize, load, and query the database from your local terminal environment.
+
+Prerequisites
+
+Ensure you have the SQLite3 CLI client installed on your system:
+
+# Ubuntu / Debian
+
+sudo apt install sqlite3
+
+# macOS (via Homebrew)
+
+brew install sqlite
+
+Step 1: Initialize Database & Core Tables
+
+Compile the base tables and apply performance-enhancing relational constraints:
+
+# Open SQLite and run creation scripts in sequence
+
+sqlite3 summertides.db < database/01_create_database.sql
+sqlite3 summertides.db < database/02_create_tables.sql
+sqlite3 summertides.db < database/04_constraints.sql
+
+Step 2: Seed Mock Data
+
+Inject mock transactional data into the empty schemas:
+
+sqlite3 summertides.db < database/03_insert_data.sql
+
+Step 3: Run Analytic Queries
+
+Execute the complex joins or business intelligence reporting scripts:
+
+# Run join queries
+
+sqlite3 -header -column summertides.db < queries/10_joins.sql
+
+# Run aggregation metrics
+
+sqlite3 -header -column summertides.db < queries/12_bonus.sql
+
+📊 Sample Analytic Output (From Core Scripts)
+
+Join Query: Interactive Schedule Verification
+
+Connects schedules, artist profiles, and physical venues to output clean timeline rosters:
+
+SELECT
+stages.student_name AS stage_name,
+artists.name AS artist_name,
+performances.start_time,
+performances.end_time
+FROM performances
+JOIN stages ON performances.stage_id = stages.stage_id
+JOIN artists ON performances.artist_id = artists.artist_id;
+
+Aggregate Query: Vendor Performance vs Average Ticket Yield
+
+Filters commercial vendors whose total revenue metrics outpace the average transaction volume on-site:
+
+SELECT
+vendor_id,
+SUM(amount) AS total_sales
+FROM sales
+GROUP BY vendor_id
+HAVING total_sales > (SELECT AVG(amount) FROM sales);
+
+👥 The Engineering & Documenting Team
+
+Wayne Kiptoo — Lead Database Engineer (Core Schema Design & Table Engineering)
+
+Brigit Njoroge — Performance Engineer (Relational Constraints, Performance Indexes & Optimization)
+
+[Your Name] — Technical Writer & Documenter (Data Dictionary, Slide Presentations & System Architecture Manual)
