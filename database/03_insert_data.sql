@@ -34,5 +34,18 @@ INSERT INTO performances (artist_id, stage_id, performance_date, start_time, end
 (4, 2, '2026-12-20', '19:30', '21:30', 'DJ Set'),
 (5, 3, '2026-12-20', '17:00', '18:00', 'Acoustic Set');
 
+-- Adds festival attendees.
+INSERT INTO attendees (first_name, last_name, email, phone, city) VALUES
+('Amina', 'Hassan', 'amina.hassan@example.com', '+254700111222', 'Mombasa'),
+('Brian', 'Otieno', 'brian.otieno@example.com', '+254711222333', 'Nairobi'),
+('Chao', 'Mwakio', 'chao.mwakio@example.com', '+254722333444', 'Diani'),
+('Diana', 'Wanjiru', 'diana.wanjiru@example.com', '+254733444555', 'Nairobi'),
+('Eric', 'Kiptoo', 'eric.kiptoo@example.com', '+254744555666', 'Nakuru'),
+('Faith', 'Nabwire', 'faith.nabwire@example.com', '+254755666777', 'Kampala'),
+('George', 'Muli', 'george.muli@example.com', '+254766777888', 'Machakos'),
+('Halima', 'Ali', 'halima.ali@example.com', '+254777888999', 'Mombasa');
+
+
+
 
 
