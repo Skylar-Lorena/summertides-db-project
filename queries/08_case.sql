@@ -13,3 +13,11 @@ SELECT full_name, age,
            ELSE 'Senior'
        END AS age_category
 FROM attendees;
+
+SELECT vendor_name, rating,
+       CASE
+           WHEN rating >= 4.5 THEN 'Excellent'
+           WHEN rating >= 4.0 THEN 'Good'
+           ELSE 'Needs Improvement'
+       END AS rating_category
+FROM vendors;
