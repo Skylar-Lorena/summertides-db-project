@@ -18,3 +18,7 @@ ALTER TABLE performances
 -- Basic sanity check that emails look like emails.
 ALTER TABLE attendees
     ADD CONSTRAINT chk_email_format CHECK (email LIKE '%_@_%._%');
+
+-- A sponsor should only be listed once per stage.
+ALTER TABLE stage_sponsors
+    ADD CONSTRAINT uq_stage_sponsor UNIQUE (stage_id, sponsor_id);
