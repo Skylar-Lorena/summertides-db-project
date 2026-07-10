@@ -35,3 +35,6 @@ INNER JOIN artists AS ar
 INNER JOIN stages AS st
     ON p.stage_id = st.stage_id;
 
+SELECT *
+FROM artist_schedule
+ORDER BY performance_date, start_time;
