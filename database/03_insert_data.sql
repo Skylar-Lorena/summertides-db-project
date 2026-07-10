@@ -20,5 +20,19 @@ INSERT INTO artists (artist_name, genre, country, contact_email) VALUES
 ('DJ Neptune', 'Afrobeats', 'Nigeria', 'bookings@djneptune.example'),
 ('Watendawili', 'Afro-fusion', 'Kenya', 'hello@watendawili.example');
 
+-- Adds a conflict-free performance programme across all three days.
+INSERT INTO performances (artist_id, stage_id, performance_date, start_time, end_time, set_type) VALUES
+(1, 1, '2026-12-18', '20:30', '22:00', 'Headline'),
+(2, 1, '2026-12-18', '18:45', '20:00', 'Live Set'),
+(4, 2, '2026-12-18', '21:00', '23:00', 'DJ Set'),
+(3, 3, '2026-12-18', '17:30', '18:30', 'Acoustic Set'),
+(5, 1, '2026-12-19', '19:30', '20:45', 'Live Set'),
+(6, 1, '2026-12-19', '21:15', '22:30', 'Headline'),
+(7, 2, '2026-12-19', '20:00', '22:00', 'DJ Set'),
+(8, 3, '2026-12-19', '16:30', '17:30', 'Acoustic Set'),
+(3, 1, '2026-12-20', '18:30', '19:45', 'Live Set'),
+(4, 2, '2026-12-20', '19:30', '21:30', 'DJ Set'),
+(5, 3, '2026-12-20', '17:00', '18:00', 'Acoustic Set');
+
 
 
