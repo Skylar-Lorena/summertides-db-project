@@ -67,3 +67,14 @@ INNER JOIN sponsors AS sp
     ON ss.sponsor_id = sp.sponsor_id
 ORDER BY st.stage_name, sp.sponsor_name;
 
+-- 6. Show artists who do not yet have a scheduled performance.
+SELECT
+    ar.artist_name,
+    ar.genre,
+    ar.country
+FROM artists AS ar
+LEFT JOIN performances AS p
+    ON ar.artist_id = p.artist_id
+WHERE p.performance_id IS NULL
+ORDER BY ar.artist_name;
+
