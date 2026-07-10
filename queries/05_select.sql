@@ -23,4 +23,10 @@ SELECT
     city AS home_city
 FROM attendees;
 
+SELECT *
+FROM vendors;
+
+SELCT *
+FROM stages;
+
 
