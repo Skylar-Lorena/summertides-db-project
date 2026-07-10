@@ -1,96 +1,60 @@
-# 🌊 SummerTides Festival Database
+# 🌊 SummerTides Festival Relational Database System
 
-## Welcome
+## Project Overview
 
-Congratulations!
+The SummerTides Festival Database System is a production-ready relational database engineered to streamline the operations of a premier three-day music, arts, and cultural festival in East Africa.
 
-Your team has been contracted as database engineers for **SummerTides Festival**, one of the largest annual beach festivals in East Africa.
+Previously, festival organizers managed logistics, ticketing, artist schedules, and financial transactions using disconnected spreadsheets. This outdated approach led to critical operational challenges, including duplicate records, unverified ticket sales, scheduling conflicts, and inaccurate financial reporting.
 
-The organizers currently manage everything using spreadsheets.
-
-Unfortunately, duplicate records, missing ticket information, scheduling conflicts, and poor reporting have become a nightmare.
-
-Your mission is to design and build a relational database that will power the entire festival.
+This project completely replaces those legacy spreadsheets with a centralized, scalable SQL database. The new system automates data management, secures transactional integrity, and provides real-time business intelligence to festival coordinators.
 
 ---
 
-## The Festival
+## Core Features & Engineering Solutions
 
-SummerTides is a three-day festival featuring:
-
-- Live music
-- DJs
-- Food vendors
-- Art exhibitions
-- Sponsors
-- Multiple performance stages
-- Thousands of attendees
-
-The organizing committee wants a database that allows them to easily answer questions such as:
-
-- Which artist is performing where?
-- Which attendees bought VIP tickets?
-- Which stage hosted the most performances?
-- Which vendors generated the most sales?
-- Which sponsors funded each stage?
+- **Automated Scheduling and Conflict Resolution:** Implements structural constraints that eliminate the risk of double-booking artists or over-allocating performance stages.
+- **Scalable Core Architecture:** Connects complex operational dimensions—including multi-tier ticketing systems, vendor revenue tracking, stage sponsorships, and artist timetables—into a single, unified schema.
+- **Business Intelligence (BI) Reporting:** Features pre-compiled SQL views and complex analytical queries that instantly generate administrative reports, including vendor performance metrics, VIP revenue yields, and stage capacity audits.
+- **Localized Sample Data:** Features a robust data pipeline populated with realistic, regional records reflecting local artists, regional currency variables, and East African coastal festival dynamics.
 
 ---
 
-## Project Objectives
+## Project Architecture & Execution Sequence
 
-Your team will:
+To deploy the database infrastructure smoothly and prevent runtime, relational, or foreign-key assignment errors, you must execute the scripts in the exact sequence outlined below:
 
-- Design a relational database
-- Create tables
-- Build relationships
-- Insert realistic sample data
-- Write business queries
-- Generate reports
-- Create reusable views
+### Phase 1: Database Setup and Schema Initialization
 
----
+1.  **`database/01_create_database.sql`**  
+    Initializes the core database cluster and configures environmental parameters.
+2.  **`database/02_create_tables.sql`**  
+    Generates the structural table blueprints (including `Artists`, `Stages`, `Attendees`, `Tickets`, `Vendors`, and `Sponsors`) along with primary keys.
+3.  **`database/03_insert_data.sql`**  
+    Seeds the structural database tables with comprehensive, realistic, and localized mock data records.
+4.  **`database/04_constraints.sql`**  
+    Enforces referential integrity, foreign key relations, unique parameters, and operational validation bounds.
 
-## Folder Structure
+### Phase 2: Analytical Queries & Administrative Reporting
 
-database/
-Contains scripts used to build the database.
-
-queries/
-Contains all SQL exercises.
-
-docs/
-Contains supporting documentation such as the ER Diagram.
-
-presentation/
-Contains your project presentation.
+Execute the operations inside the `queries/` directory sequentially from **`05_select.sql` through `12_bonus.sql`**. These scripts pull critical administrative insights, ranging from basic data segmenting filters and multi-table joins to complex conditional logic mapping and revenue aggregations.
 
 ---
 
-## Running the Project
+## 👥 Engineering Team & Roles
 
-Execute the SQL files in the following order:
+| Full Name | Project Role | Core Contributions & Responsibilities |
 
-1. 01_create_database.sql
-2. 02_create_tables.sql
-3. 03_insert_data.sql
-4. 04_constraints.sql
-5. Continue through the queries folder.
-
----
-
-## Team Members
-
-| Name | Role |
-|------|------|
-| Student 1 | Database Architect |
-| Student 2 | SQL Developer |
-| Student 3 | Data Engineer |
-| Student 4 | Query Specialist |
-| Student 5 | QA Tester |
-| Student 6 | Documentation Lead |
+| **Faith Kiruku** | Database Architect | Orchestrated conceptual schema modeling and mapped out the official Entity-Relationship Diagram (ERD). |
+| **Ilhan Mohamud** | SQL Developer | Implemented structural table frameworks, configured DDL scripts, and mapped data control keys. |
+| **Brigit Njoroge** | Data Engineer | Programmed the data injection pipeline and generated realistic regional database mock records. |
+| **Wayne Kiptoo** | Query Specialist | Authored advanced data retrieval scripts, tactical business analytics, and reusable organizational views. |
+| **Gad Ontune** | QA Tester | Audited relational dependencies, verified script execution orders, and managed stress-testing operations. |
+| **Abdinasir Osman** | Documentation Lead | Formatted the repository layout, authored technical data dictionaries, and developed the final project presentation. |
 
 ---
 
-Good luck!
+## 🚀 Deployment Instructions
 
-The success of SummerTides Festival depends on your database.
+1. Clone this repository to your local machine.
+2. Open your preferred SQL database management interface or command-line terminal.
+3. Execute the scripts in the exact numerical order listed in the execution sequence above to build a stable, conflict-free deployment.
