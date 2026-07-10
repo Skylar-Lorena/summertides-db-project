@@ -10,3 +10,7 @@
 -- An artist cannot be double-booked at the same time on the same day.
 ALTER TABLE performances
     ADD CONSTRAINT uq_artist_day_time UNIQUE (artist_id, festival_day, start_time);
+
+-- A stage cannot host two performances at the same time on the same day.
+ALTER TABLE performances
+    ADD CONSTRAINT uq_stage_day_time UNIQUE (stage_id, festival_day, start_time);
