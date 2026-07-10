@@ -26,3 +26,40 @@ CREATE TABLE vendors (
     category VARCHAR,
     location VARCHAR
 );
+
+CREATE TABLE sponsors (
+    sponsor_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    contribution_amount DECIMAL
+);
+
+CREATE TABLE perfomances(
+    performance_id INT AUTO INCREMENT PRIMARY KEY,
+    artist_id INT NOT NULL,
+    stage_id INT NOT NULL,
+    start_time TIME NOT NULL,
+    end_time TIME NOT NULL
+ 
+
+);
+
+CREATE TABLE  stages(
+    stage_id INT AUTO INCREMENT PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    capacity INT NOT NULL,
+    location VARCHAR
+
+);
+
+CREATE TABLE sales(
+    sale_id INT AUTO INCREMENT PRIMARY KEY,
+    vendor_id INT NOT NULL,
+    attendee_id INT NOT NULL,
+    amount DECIMAL
+
+);
+
+CREATE TABLE stage_sponsors(
+    stage_id INT AUTO INCREMENT PRIMARY KEY,
+    sponosr_id INT NOT NULL
+);
