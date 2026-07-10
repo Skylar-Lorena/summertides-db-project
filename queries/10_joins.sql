@@ -23,3 +23,19 @@ INNER JOIN artists AS ar
 INNER JOIN stages AS st
     ON p.stage_id = st.stage_id
 ORDER BY ar.artist_name, st.stage_name;
+
+-- 3. Display every performance together with the artist name and stage name.
+SELECT
+    p.performance_id,
+    ar.artist_name,
+    st.stage_name,
+    p.performance_date,
+    p.start_time,
+    p.end_time,
+    p.festival_day
+FROM performances AS p
+INNER JOIN artists AS ar
+    ON p.artist_id = ar.artist_id
+INNER JOIN stages AS st
+    ON p.stage_id = st.stage_id
+ORDER BY p.performance_date, p.start_time;
