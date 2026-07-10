@@ -35,17 +35,3 @@ The organizing committee wants a database that allows them to easily answer ques
 - Which sponsors funded each stage?
 
 ---
-
-## Project Objectives
-
-Your team will:
-
-- Design a relational database
-- Create tables
-- Build relationships
-- Insert realistic sample data
-- Write business queries
-- Generate reports
-- Create reusable views
-
----
