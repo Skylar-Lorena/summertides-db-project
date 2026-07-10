@@ -181,3 +181,47 @@ INSERT INTO performances (artist_id, stage_id, start_time, end_time, festival_da
 (15, 5, '18:00:00', '19:00:00', '2026-08-15');
  
 -- ---------------------------------------------------
+
+-- Sales (50)
+-- attendee_id is NOT NULL per the team schema, so every
+-- sale is tied to a real attendee (no anonymous sales here).
+-- ---------------------------------------------------
+INSERT INTO sales (vendor_id, attendee_id, amount) VALUES
+(1, 1, 350.00), (2, 2, 450.00), (3, 3, 200.00), (4, 4, 300.00), (5, 5, 1500.00),
+(6, 6, 3500.00), (7, 7, 600.00), (8, 8, 1200.00), (9, 9, 250.00), (10, 10, 180.00),
+(1, 11, 360.00), (2, 12, 470.00), (3, 13, 210.00), (4, 14, 320.00), (5, 15, 1550.00),
+(6, 16, 3600.00), (7, 17, 620.00), (8, 18, 1250.00), (9, 19, 260.00), (10, 20, 190.00),
+(1, 1, 340.00), (2, 2, 460.00), (3, 3, 220.00), (4, 4, 310.00), (5, 5, 1600.00),
+(6, 6, 3400.00), (7, 7, 610.00), (8, 8, 1150.00), (9, 9, 240.00), (10, 10, 170.00),
+(1, 11, 355.00), (2, 12, 440.00), (3, 13, 230.00), (4, 14, 330.00), (5, 15, 1450.00),
+(6, 16, 3550.00), (7, 17, 595.00), (8, 18, 1225.00), (9, 19, 255.00), (10, 20, 175.00),
+(1, 10, 345.00), (2, 9, 455.00), (3, 8, 205.00), (4, 7, 295.00), (5, 6, 1525.00),
+(6, 5, 3480.00), (7, 15, 615.00), (8, 16, 1275.00), (9, 20, 245.00), (10, 3, 165.00);
+ 
+-- ---------------------------------------------------
+-- Stage_Sponsors (14)
+-- ---------------------------------------------------
+INSERT INTO stage_sponsors (stage_id, sponsor_id) VALUES
+(1, 1), (1, 2),
+(2, 3), (2, 4),
+(3, 1), (3, 5),
+(4, 6),
+(5, 7), (5, 8),
+(6, 3), (6, 6),
+(1, 8),
+(2, 7),
+(4, 4);
+ 
+-- ---------------------------------------------------
+-- Sanity check counts against project minimums
+-- ---------------------------------------------------
+SELECT 'attendees' AS table_name, COUNT(*) AS row_count FROM attendees
+UNION ALL SELECT 'artists', COUNT(*) FROM artists
+UNION ALL SELECT 'stages', COUNT(*) FROM stages
+UNION ALL SELECT 'performances', COUNT(*) FROM performances
+UNION ALL SELECT 'tickets', COUNT(*) FROM tickets
+UNION ALL SELECT 'vendors', COUNT(*) FROM vendors
+UNION ALL SELECT 'sales', COUNT(*) FROM sales
+UNION ALL SELECT 'sponsors', COUNT(*) FROM sponsors
+UNION ALL SELECT 'stage_sponsors', COUNT(*) FROM stage_sponsors;
+ 
