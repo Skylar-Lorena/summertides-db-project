@@ -15,3 +15,8 @@ FROM attendees AS a
 INNER JOIN tickets AS t
     ON a.attendee_id = t.attendee_id
 WHERE t.ticket_type = 'VIP';
+
+SELECT *
+FROM vip_attendees
+ORDER BY last_name, first_name;
+
