@@ -1,5 +1,7 @@
--- Create a brand new database named summertides_db
-CREATE DATABASE summertides_db;
+-- ==========================================
+-- 01: DATABASE INITIALIZATION
+-- ==========================================
 
--- Switch our current connection to use the newly created database
+DROP DATABASE IF EXISTS summertides_db;
+CREATE DATABASE summertides_db;
 \c summertides_db;
