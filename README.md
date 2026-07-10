@@ -80,17 +80,13 @@ Execute the SQL files in the following order:
 
 ## Team Members
 
-| Name | Role |
-|------|------|
+| Name      | Role               |
+| --------- | ------------------ |
 | Student 1 | Database Architect |
-| Student 2 | SQL Developer |
-| Student 3 | Data Engineer |
-| Student 4 | Query Specialist |
-| Student 5 | QA Tester |
+| Student 2 | SQL Developer      |
+| Student 3 | Data Engineer      |
+| Student 4 | Query Specialist   |
+| Student 5 | QA Tester          |
 | Student 6 | Documentation Lead |
 
 ---
-
-Good luck!
-
-The success of SummerTides Festival depends on your database.
