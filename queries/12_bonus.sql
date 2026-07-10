@@ -1,45 +1,64 @@
--- Lesson 10: Join multiple tables to answer business questions.
+-- Lesson 12: Bonus business questions.
 
--- 1. Display attendees together with their ticket information.
-SELECT a.first_name, a.last_name, t.ticket_type, t.price, t.ticket_code
-FROM attendees a
-JOIN tickets t ON a.attendee_id = t.attendee_id;
-
--- 2. Show artists and the stages where they perform.
-SELECT ar.artist_name, st.stage_name, p.performance_date
+-- 1. Which artist performs the most?
+SELECT ar.artist_name, COUNT(*) AS performance_count
 FROM performances p
 JOIN artists ar ON p.artist_id = ar.artist_id
-JOIN stages st ON p.stage_id = st.stage_id;
+GROUP BY ar.artist_name
+ORDER BY performance_count DESC
+LIMIT 1;
 
--- 3. Display every performance together with the artist name and stage name.
-SELECT p.performance_id, ar.artist_name, st.stage_name, p.performance_date, p.start_time, p.end_time
+-- 2. Which stage hosts the highest number of performances?
+SELECT st.stage_name, COUNT(*) AS performance_count
 FROM performances p
-JOIN artists ar ON p.artist_id = ar.artist_id
 JOIN stages st ON p.stage_id = st.stage_id
-ORDER BY p.performance_date, p.start_time;
+GROUP BY st.stage_name
+ORDER BY performance_count DESC
+LIMIT 1;
 
--- 4. List every vendor together with the attendees who purchased from them.
-SELECT v.vendor_name, a.first_name, a.last_name, s.item_sold, s.amount
+-- 3. Which vendor generated the highest revenue?
+SELECT v.vendor_name, SUM(s.amount) AS total_revenue
 FROM sales s
 JOIN vendors v ON s.vendor_id = v.vendor_id
-JOIN attendees a ON s.attendee_id = a.attendee_id;
+GROUP BY v.vendor_name
+ORDER BY total_revenue DESC
+LIMIT 1;
 
--- 5. Display sponsors alongside the stages they sponsor.
-SELECT sp.sponsor_name, st.stage_name, ss.sponsorship_amount
-FROM stage_sponsors ss
-JOIN sponsors sp ON ss.sponsor_id = sp.sponsor_id
-JOIN stages st ON ss.stage_id = st.stage_id;
+-- 4. Which attendee spent the most money?
+SELECT a.first_name, a.last_name, SUM(s.amount) AS total_spent
+FROM sales s
+JOIN attendees a ON s.attendee_id = a.attendee_id
+GROUP BY a.attendee_id, a.first_name, a.last_name
+ORDER BY total_spent DESC
+LIMIT 1;
 
--- 6. Show artists who do not yet have a scheduled performance.
-SELECT ar.artist_name
-FROM artists ar
-LEFT JOIN performances p ON ar.artist_id = p.artist_id
-WHERE p.performance_id IS NULL;
+-- 5. Which city has the highest number of attendees?
+SELECT city, COUNT(*) AS attendee_count
+FROM attendees
+GROUP BY city
+ORDER BY attendee_count DESC
+LIMIT 1;
 
--- 7. Retrieve all performances for a selected festival day.
-SELECT ar.artist_name, st.stage_name, p.performance_date, p.start_time, p.end_time
+-- 6. Which festival day generated the highest ticket revenue?
+SELECT p.festival_day, SUM(t.price) AS ticket_revenue
 FROM performances p
-JOIN artists ar ON p.artist_id = ar.artist_id
-JOIN stages st ON p.stage_id = st.stage_id
-WHERE p.festival_day = 'Day 2'
-ORDER BY p.start_time;
+JOIN tickets t ON 1 = 1
+GROUP BY p.festival_day
+ORDER BY ticket_revenue DESC
+LIMIT 1;
+
+-- 7. Which sponsor contributed the most funding?
+SELECT sponsor_name, sponsorship_amount
+FROM sponsors
+ORDER BY sponsorship_amount DESC
+LIMIT 1;
+
+-- 8. What is the total expected ticket revenue?
+SELECT SUM(price) AS total_expected_ticket_revenue FROM tickets;
+
+-- 9. Which ticket type was purchased the most?
+SELECT ticket_type, COUNT(*) AS purchase_count
+FROM tickets
+GROUP BY ticket_type
+ORDER BY purchase_count DESC
+LIMIT 1;
