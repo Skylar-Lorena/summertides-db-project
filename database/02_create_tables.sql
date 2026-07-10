@@ -88,3 +88,16 @@ CREATE TABLE tickets (
     festival_day  INT           NOT NULL CHECK (festival_day IN (1, 2, 3)),
     purchase_date DATE          NOT NULL DEFAULT CURRENT_DATE
 );
+
+-- ---------------------------------------------------
+-- Performances: which artist plays which stage & when
+-- ---------------------------------------------------
+CREATE TABLE performances (
+    performance_id SERIAL PRIMARY KEY,
+    artist_id      INT  NOT NULL REFERENCES artists(artist_id) ON DELETE CASCADE,
+    stage_id       INT  NOT NULL REFERENCES stages(stage_id) ON DELETE CASCADE,
+    festival_day   INT  NOT NULL CHECK (festival_day IN (1, 2, 3)),
+    start_time     TIME NOT NULL,
+    end_time       TIME NOT NULL,
+    CHECK (end_time > start_time)
+);
