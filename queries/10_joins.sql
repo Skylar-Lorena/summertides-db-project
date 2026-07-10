@@ -54,3 +54,16 @@ LEFT JOIN sales AS s
 LEFT JOIN attendees AS a
     ON s.attendee_id = a.attendee_id
 ORDER BY v.vendor_name, a.last_name;
+
+-- 5. Display sponsors alongside the stages they sponsor.
+SELECT
+    st.stage_name,
+    sp.sponsor_name,
+    ss.sponsorship_amount
+FROM stage_sponsors AS ss
+INNER JOIN stages AS st
+    ON ss.stage_id = st.stage_id
+INNER JOIN sponsors AS sp
+    ON ss.sponsor_id = sp.sponsor_id
+ORDER BY st.stage_name, sp.sponsor_name;
+
