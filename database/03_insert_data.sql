@@ -80,7 +80,10 @@ INSERT INTO sponsors (sponsor_name, industry, contact_email) VALUES
 ('Kenya Airways', 'Aviation', 'sponsorships@kenyaairways.example'),
 ('Equity Bank', 'Financial Services', 'events@equity.example');
 
-
+-- Records the sponsor contribution assigned to each stage.
+INSERT INTO stage_sponsors (stage_id, sponsor_id, contribution_amount) VALUES
+(1, 1, 2500000.00), (1, 2, 1800000.00), (2, 2, 1200000.00),
+(2, 3, 900000.00), (3, 4, 650000.00), (4, 1, 400000.00);
 
 
 
