@@ -101,3 +101,14 @@ CREATE TABLE performances (
     end_time       TIME NOT NULL,
     CHECK (end_time > start_time)
 );
+
+-- ---------------------------------------------------
+-- Sales: purchases attendees make from vendors
+-- ---------------------------------------------------
+CREATE TABLE sales (
+    sale_id     SERIAL PRIMARY KEY,
+    vendor_id   INT           NOT NULL REFERENCES vendors(vendor_id) ON DELETE CASCADE,
+    attendee_id INT           NOT NULL REFERENCES attendees(attendee_id) ON DELETE CASCADE,
+    sale_amount DECIMAL(10,2) NOT NULL CHECK (sale_amount >= 0),
+    sale_date   DATE          NOT NULL DEFAULT CURRENT_DATE
+);
