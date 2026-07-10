@@ -1,8 +1,4 @@
--- ==========================================
--- 02: CORE TABLE STRUCTURES
--- ==========================================
-
--- 1. STAGES TABLE (Independent base table)
+-- 1. STAGES TABLE (Base table)
 CREATE TABLE stages (
     stage_id INT GENERATED ALWAYS AS IDENTITY,
     stage_name VARCHAR(100),
@@ -11,7 +7,7 @@ CREATE TABLE stages (
     PRIMARY KEY (stage_id)
 );
 
--- 2. ARTISTS TABLE (Independent base table)
+-- 2. ARTISTS TABLE (Base table)
 CREATE TABLE artists (
     artist_id INT GENERATED ALWAYS AS IDENTITY,
     artist_name VARCHAR(100),
@@ -32,7 +28,7 @@ CREATE TABLE performances (
     FOREIGN KEY (stage_id) REFERENCES stages(stage_id)
 );
 
--- 4. ATTENDEES TABLE (Independent base table)
+-- 4. ATTENDEES TABLE (Base table)
 CREATE TABLE attendees (
     attendee_id INT GENERATED ALWAYS AS IDENTITY,
     first_name VARCHAR(50),
@@ -46,18 +42,18 @@ CREATE TABLE attendees (
 CREATE TABLE tickets (
     ticket_id INT GENERATED ALWAYS AS IDENTITY,
     attendee_id INT,
-    ticket_tier VARCHAR(50), -- e.g., VIP, Regular, Early Bird
+    ticket_tier VARCHAR(50), -- VIP, Regular, etc.
     price NUMERIC(10, 2),
     purchase_date DATE,
     PRIMARY KEY (ticket_id),
     FOREIGN KEY (attendee_id) REFERENCES attendees(attendee_id)
 );
 
--- 6. VENDORS TABLE (Independent base table for festival businesses)
+-- 6. VENDORS TABLE (Base table for festival shops)
 CREATE TABLE vendors (
     vendor_id INT GENERATED ALWAYS AS IDENTITY,
     vendor_name VARCHAR(100),
-    business_type VARCHAR(50), -- e.g., Food, Drinks, Merchandise
+    business_type VARCHAR(50), -- Food, Merchandise, etc.
     stall_number VARCHAR(10),
     PRIMARY KEY (vendor_id)
 );
