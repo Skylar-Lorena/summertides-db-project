@@ -57,3 +57,13 @@ CREATE TABLE stages (
     stage_name VARCHAR(50) NOT NULL UNIQUE,
     capacity   INT         NOT NULL CHECK (capacity > 0)
 );
+
+-- ---------------------------------------------------
+-- Vendors: food, drink and merchandise vendors
+-- ---------------------------------------------------
+CREATE TABLE vendors (
+    vendor_id   SERIAL PRIMARY KEY,
+    vendor_name VARCHAR(100) NOT NULL,
+    category    VARCHAR(50)  NOT NULL,
+    rating      DECIMAL(2,1) CHECK (rating BETWEEN 0 AND 5)
+);
