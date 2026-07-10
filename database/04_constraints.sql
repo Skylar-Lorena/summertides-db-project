@@ -22,3 +22,14 @@ ALTER TABLE attendees
 -- A sponsor should only be listed once per stage.
 ALTER TABLE stage_sponsors
     ADD CONSTRAINT uq_stage_sponsor UNIQUE (stage_id, sponsor_id);
+
+-- Indexes on foreign key columns: these speed up the joins and
+-- lookups used throughout the queries/ folder (e.g. tickets by
+-- attendee, performances by artist/stage, sales by vendor/attendee).
+CREATE INDEX idx_tickets_attendee      ON tickets(attendee_id);
+CREATE INDEX idx_performances_artist   ON performances(artist_id);
+CREATE INDEX idx_performances_stage    ON performances(stage_id);
+CREATE INDEX idx_sales_vendor          ON sales(vendor_id);
+CREATE INDEX idx_sales_attendee        ON sales(attendee_id);
+CREATE INDEX idx_stage_sponsors_stage  ON stage_sponsors(stage_id);
+CREATE INDEX idx_stage_sponsors_sponsor ON stage_sponsors(sponsor_id);
