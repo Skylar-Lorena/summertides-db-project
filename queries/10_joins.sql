@@ -7,3 +7,8 @@ SELECT
     t.price,
     t.purchase_date
 FROM attendees AS a
+
+INNER JOIN tickets AS t
+    ON a.attendee_id = t.attendee_id
+ORDER BY a.last_name, a.first_name;
+
