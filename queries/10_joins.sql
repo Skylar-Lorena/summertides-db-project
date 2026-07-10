@@ -39,3 +39,18 @@ INNER JOIN artists AS ar
 INNER JOIN stages AS st
     ON p.stage_id = st.stage_id
 ORDER BY p.performance_date, p.start_time;
+
+-- 4. List every vendor together with the attendees who purchased from them.
+SELECT
+    v.vendor_name,
+    a.first_name,
+    a.last_name,
+    a.email,
+    s.sale_date,
+    s.amount
+FROM vendors AS v
+LEFT JOIN sales AS s
+    ON v.vendor_id = s.vendor_id
+LEFT JOIN attendees AS a
+    ON s.attendee_id = a.attendee_id
+ORDER BY v.vendor_name, a.last_name;
