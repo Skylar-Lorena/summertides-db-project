@@ -1,4 +1,4 @@
-# 🌊 SummerTides Festival Database
+# SummerTides Festival Database
 
 ## Welcome
 
