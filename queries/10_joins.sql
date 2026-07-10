@@ -21,3 +21,8 @@ SELECT s.stage_name, sp.sponsor_name
 FROM stages s
 JOIN stage_sponsors ss ON s.stage_id = ss.stage_id
 JOIN sponsors sp ON ss.sponsor_id = sp.sponsor_id;
+
+SELECT ar.artist_name
+FROM artists ar
+LEFT JOIN performances p ON ar.artist_id = p.artist_id
+WHERE p.performance_id IS NULL;
