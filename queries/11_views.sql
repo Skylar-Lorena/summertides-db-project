@@ -51,3 +51,7 @@ FROM vendors AS v
 LEFT JOIN sales AS s
     ON v.vendor_id = s.vendor_id
 GROUP BY v.vendor_id, v.vendor_name;
+
+SELECT *
+FROM vendor_sales_summary
+ORDER BY total_sales DESC;
