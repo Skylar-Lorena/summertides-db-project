@@ -38,8 +38,9 @@ CREATE TABLE perfomances(
     artist_id INT NOT NULL,
     stage_id INT NOT NULL,
     start_time TIME NOT NULL,
-    end_time TIME NOT NULL
- 
+    end_time TIME NOT NULL,
+    FOREIGN KEY(artist_id) REFERENCES artist(artist_id),
+    FOREIGN KEY(stage_id) REFERENCES stages(stage_id)
 
 );
 
@@ -56,10 +57,16 @@ CREATE TABLE sales(
     vendor_id INT NOT NULL,
     attendee_id INT NOT NULL,
     amount DECIMAL
+    FOREIGN KEY(vendor_id) REFERENCES vendors(vendor_id)
+    FOREIGN KEY(attendee_id) REFERENCES attendees(attendee_id)
+    
 
 );
 
 CREATE TABLE stage_sponsors(
     stage_id INT AUTO INCREMENT PRIMARY KEY,
     sponosr_id INT NOT NULL
+    FOREIGN KEY(stage_id) REFERENCES stages(stage_id)
+    FOREIGN KEY(sponsor_id) REFERENCES sponsors(sponsor_id)
+
 );
