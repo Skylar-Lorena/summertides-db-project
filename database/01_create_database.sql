@@ -1,14 +1,12 @@
--- =====================================================
--- SummerTides Festival Database
+
 -- Author:  Jairus - Database Architect
--- Run this first, before any other script in the project.
--- =====================================================
+-- Purpose: "Create" the summertides SQLite database.
+--- This script is idempotent: it can be run multiple times
+--
+--     sqlite3 summertides.db
+-- SQLite doesn't enforce foreign keys by default -- this must
+-- be turned on for every connection/session that touches the DB.
+PRAGMA foreign_keys = ON;
 
--- Create the database that will power the festival.
-CREATE DATABASE summertides;
-
-\c summertides
-
--- Verify the database was created by listing all databases
--- on the server and confirming "summertides" is in the list.
-\l
+-- Verify the database file is open and ready.
+SELECT 'summertides database ready' AS status;
