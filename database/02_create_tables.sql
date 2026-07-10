@@ -48,3 +48,12 @@ CREATE TABLE artists (
     genre       VARCHAR(50)  NOT NULL,
     country     VARCHAR(50)  NOT NULL
 );
+
+-- ---------------------------------------------------
+-- Stages: physical performance stages at the festival
+-- ---------------------------------------------------
+CREATE TABLE stages (
+    stage_id   SERIAL PRIMARY KEY,
+    stage_name VARCHAR(50) NOT NULL UNIQUE,
+    capacity   INT         NOT NULL CHECK (capacity > 0)
+);
