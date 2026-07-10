@@ -59,6 +59,15 @@ INSERT INTO ticket_purchases (attendee_id, ticket_type_id, purchase_date, quanti
 (5, 3, '2026-10-08', 1), (6, 2, '2026-10-10', 1),
 (7, 1, '2026-10-12', 3), (8, 4, '2026-10-15', 2);
 
+-- Adds vendors operating at the festival.
+INSERT INTO vendors (festival_id, vendor_name, vendor_category, contact_name, phone) VALUES
+(1, 'Coastal Bites', 'Food', 'Maya Mwangi', '+254701100200'),
+(1, 'Tamu Juices', 'Beverage', 'Ibrahim Noor', '+254702200300'),
+(1, 'Kanga Culture', 'Merchandise', 'Zawadi Achieng', '+254703300400'),
+(1, 'Sea Glass Gallery', 'Art', 'Liam Kariuki', '+254704400500');
+
+
+
 
 
 
