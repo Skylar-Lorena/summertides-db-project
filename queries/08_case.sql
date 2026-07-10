@@ -11,6 +11,17 @@ SELECT
     END AS price_category
 FROM tickets;
 
+-- Vendor ratings as Excellent, Good, or Needs Improvement.
+SELECT
+    vendor_name,
+    rating,
+    CASE
+        WHEN rating >= 4.5 THEN 'Excellent'
+        WHEN rating >= 3.5 THEN 'Good'
+        ELSE 'Needs Improvement'
+    END AS rating_category
+FROM vendors;
+
 -- Attendees as Youth, Adult, or Senior based on age.
 SELECT
     first_name,
