@@ -37,7 +37,6 @@ LIMIT 5;
 
 -- Test 4: Duplicate Email Check (Should fail due to UNIQUE email rule)
 -- INSERT INTO attendees (first_name, last_name, email, phone) VALUES ('John', 'Doe', 'duplicate@test.com', '123456');
-=======
 -- Display all stages
 SELECT * FROM stages;
 
