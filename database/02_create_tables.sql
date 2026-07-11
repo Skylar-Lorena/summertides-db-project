@@ -96,7 +96,7 @@ CREATE TABLE performances(
 
 );
 
-- VENDORS TABLE
+-- VENDORS TABLE
 
 CREATE TABLE vendors(
 
@@ -133,6 +133,41 @@ CREATE TABLE sales(
 
     FOREIGN KEY(attendee_id)
     REFERENCES attendees(attendee_id)
+
+);
+
+
+-- SPONSORS TABLE
+
+CREATE TABLE sponsors(
+
+    sponsor_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    sponsor_name TEXT NOT NULL,
+
+    contribution REAL
+
+);
+
+
+
+-- STAGE SPONSORS TABLE
+
+CREATE TABLE stage_sponsors(
+
+    stage_sponsor_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    stage_id INTEGER,
+
+    sponsor_id INTEGER,
+
+
+    FOREIGN KEY(stage_id)
+    REFERENCES stages(stage_id),
+
+
+    FOREIGN KEY(sponsor_id)
+    REFERENCES sponsors(sponsor_id)
 
 );
 
