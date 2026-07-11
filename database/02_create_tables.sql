@@ -96,5 +96,45 @@ CREATE TABLE performances(
 
 );
 
+- VENDORS TABLE
+
+CREATE TABLE vendors(
+
+    vendor_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    vendor_name TEXT NOT NULL,
+
+    category TEXT,
+
+    rating REAL CHECK(rating BETWEEN 1 AND 5)
+
+);
+
+
+
+-- SALES TABLE
+
+CREATE TABLE sales(
+
+    sale_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    vendor_id INTEGER,
+
+    attendee_id INTEGER,
+
+    amount REAL CHECK(amount > 0),
+
+    sale_date TEXT DEFAULT CURRENT_DATE,
+
+
+    FOREIGN KEY(vendor_id)
+    REFERENCES vendors(vendor_id),
+
+
+    FOREIGN KEY(attendee_id)
+    REFERENCES attendees(attendee_id)
+
+);
+
 
 
