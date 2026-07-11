@@ -1,0 +1,44 @@
+PRAGMA foreign_keys = ON;
+
+
+-- ATTENDEES TABLE
+
+CREATE TABLE attendees(
+
+    attendee_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    first_name TEXT NOT NULL,
+
+    last_name TEXT NOT NULL,
+
+    email TEXT UNIQUE NOT NULL,
+
+    phone TEXT,
+
+    age INTEGER CHECK(age > 0),
+
+    city TEXT NOT NULL
+
+);
+
+
+
+-- TICKETS TABLE
+
+CREATE TABLE tickets(
+
+    ticket_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    attendee_id INTEGER NOT NULL,
+
+    ticket_type TEXT NOT NULL,
+
+    price REAL CHECK(price > 0),
+
+    purchase_date TEXT DEFAULT CURRENT_DATE,
+
+
+    FOREIGN KEY(attendee_id)
+    REFERENCES attendees(attendee_id)
+
+);
