@@ -1,22 +1,22 @@
 -- ---------------------------------------------------------------------
 -- ATTENDEES
 -- ---------------------------------------------------------------------
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES  (1, 'Dennis Njoroge', '+254762992312', 'dennis.njoroge1@gmail.com', '2004-10-14', 'Eldoret', '2026-03-24');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (2, 'Monica Otieno', '+254778106871', 'monica.otieno2@gmail.com', '2004-12-05', 'Nairobi', '2026-03-05');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (3, 'Esther Kamau', '+254783960310', 'esther.kamau3@gmail.com', '2005-03-23', 'Eldoret', '2026-04-06');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (4, 'Monica Barasa', '+254716655764', 'monica.barasa4@gmail.com', '1996-10-05', 'Mombasa', '2026-03-19');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (5, 'Diana Njoroge', '+254782569631', 'diana.njoroge5@gmail.com', '2002-10-03', 'Mombasa', '2026-03-07');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (6, 'Monica Korir', '+254795753514', 'monica.korir6@gmail.com', '2004-10-08', 'Eldoret', '2026-04-06');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (7, 'Mary Wekesa', '+254737643310', 'mary.wekesa7@gmail.com', '2002-02-06', 'Nairobi', '2026-04-07');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (8, 'Joyce Chebet', '+254750234045', 'joyce.chebet8@gmail.com', '2003-07-24', 'Mombasa', '2026-03-06');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (9, 'Gladys Odhiambo', '+254780490681', 'gladys.odhiambo9@gmail.com', '2002-11-29', 'Kisumu', '2026-04-08');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (10, 'Grace Wafula', '+254778710461', 'grace.wafula10@gmail.com', '2003-04-30', 'Nairobi', '2026-03-27');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (14, 'Bernard Barasa', '+254799745048', 'bernard.barasa14@gmail.com', '2002-01-16', 'Mombasa', '2026-04-09');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (15, 'Daniel Onyango', '+254717912728', 'daniel.onyango15@gmail.com', '2003-05-11', 'Mombasa', '2026-03-26');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (16, 'Winnie Kiplagat', '+254776640001', 'winnie.kiplagat16@gmail.com', '2001-12-23', 'Kisumu', '2026-04-26');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (17, 'Michael Wairimu', '+254767783637', 'michael.wairimu17@gmail.com', '1994-07-22', 'Nairobi', '2026-03-23');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (18, 'Collins Adhiambo', '+254761061966', 'collins.adhiambo18@gmail.com', '1996-06-05', 'Mombasa', '2026-03-10');
-INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (19, 'Samuel Auma', '+254741317839', 'samuel.auma19@gmail.com', '2004-03-03', 'Kisumu', '2026-04-08 09:00:00');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (1, 'Dennis', 'Njoroge', 'dennis.njoroge1@gmail.com', '+254762992312', 21, 'Eldoret', '2026-03-24');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (2, 'Monica', 'Otieno', 'monica.otieno2@gmail.com', '+254778106871', 21, 'Nairobi', '2026-03-05');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (3, 'Esther', 'Kamau', 'esther.kamau3@gmail.com', '+254783960310', 20, 'Eldoret', '2026-04-06');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (4, 'Monica', 'Barasa', 'monica.barasa4@gmail.com', '+254716655764', 30, 'Mombasa', '2026-03-19');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (5, 'Diana', 'Njoroge', 'diana.njoroge5@gmail.com', '+254782569631', 23, 'Mombasa', '2026-03-07');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (6, 'Monica', 'Korir', 'monica.korir6@gmail.com', '+254795753514', 21, 'Eldoret', '2026-04-06');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (7, 'Mary', 'Wekesa', 'mary.wekesa7@gmail.com', '+254737643310', 24, 'Nairobi', '2026-04-07');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (8, 'Joyce', 'Chebet', 'joyce.chebet8@gmail.com', '+254750234045', 22, 'Mombasa', '2026-03-06');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (9, 'Gladys', 'Odhiambo', 'gladys.odhiambo9@gmail.com', '+254780490681', 23, 'Kisumu', '2026-04-08');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (10, 'Grace', 'Wafula', 'grace.wafula10@gmail.com', '+254778710461', 22, 'Nairobi', '2026-03-27');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (14, 'Bernard', 'Barasa', 'bernard.barasa14@gmail.com', '+254799745048', 24, 'Mombasa', '2026-04-09');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (15, 'Daniel', 'Onyango', 'daniel.onyango15@gmail.com', '+254717912728', 22, 'Mombasa', '2026-03-26');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (16, 'Winnie', 'Kiplagat', 'winnie.kiplagat16@gmail.com', '+254776640001', 24, 'Kisumu', '2026-04-26');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (17, 'Michael', 'Wairimu', 'michael.wairimu17@gmail.com', '+254767783637', 32, 'Nairobi', '2026-03-23');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (18, 'Collins', 'Adhiambo', 'collins.adhiambo18@gmail.com', '+254761061966', 30, 'Mombasa', '2026-03-10');
+INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (19, 'Samuel', 'Ouma', 'samuel.ouma19@gmail.com', '+254741317839', 22, 'Kisumu', '2026-04-08 09:00:00');
 INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (20, 'Patrick', 'Chebet', 'patrick.chebet20@gmail.com', '+254793503456', 24, 'Mombasa', '2026-04-25 09:00:00');
 INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (21, 'Catherine', 'Achieng', 'catherine.achieng21@gmail.com', '+254794187382', 22, 'Mombasa', '2026-04-16 09:00:00');
 INSERT INTO attendees (attendee_id, first_name, last_name, email, phone_number, age, city, registration_date) VALUES (22, 'James', 'Achieng', 'james.achieng22@gmail.com', '+254794419900', 30, 'Nairobi', '2026-04-26 09:00:00');
@@ -109,6 +109,7 @@ INSERT INTO artists (artist_id, first_name, last_name, genre, country) VALUES (1
 INSERT INTO artists (artist_id, first_name, last_name, genre, country) VALUES (13, 'Uncle', 'Waffles', 'Amapiano', 'Eswatini');
 INSERT INTO artists (artist_id, first_name, last_name, genre, country) VALUES (14, 'Vybz', 'Kartel', 'Dancehall', 'Jamaica');
 INSERT INTO artists (artist_id, first_name, last_name, genre, country) VALUES (15, 'Sauti', 'Sol', 'Afro-Pop / Soul', 'Kenya');
+
 -- ---------------------------------------------------------------------
 -- STAGES
 -- ---------------------------------------------------------------------
@@ -118,6 +119,7 @@ INSERT INTO stages (stage_id, stage_name, capacity, location) VALUES (3, 'Forest
 INSERT INTO stages (stage_id, stage_name, capacity, location) VALUES (4, 'Acoustic Stage', 1200, 'Garden Lawn');
 INSERT INTO stages (stage_id, stage_name, capacity, location) VALUES (5, 'Electronic Dome', 3000, 'West Field');
 INSERT INTO stages (stage_id, stage_name, capacity, location) VALUES (6, 'Rising Stars Stage', 1000, 'East Field');
+
 -- ---------------------------------------------------------------------
 -- PERFORMANCES
 -- ---------------------------------------------------------------------
@@ -171,56 +173,56 @@ INSERT INTO vendors (vendor_id, vendor_name, category, rating, contact_email) VA
 -- ---------------------------------------------------------------------
 -- SALES
 -- ---------------------------------------------------------------------
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (1, 11, 19, 348600.32, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (2, 11, 42, 101200.56, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (3, 3, 22, 125400.64, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (4, 12, 20, 285200.01, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (5, 1, 31, 413550.88, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (6, 11, 7, 316100.01, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (7, 8, 19, 323315.59, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (8, 8, 30, 217870.58, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (9, 9, 13, 150555.78, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (10, 8, 2, 1409090.71, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (11, 9, 29, 447300.76, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (12, 4, 14, 47400.57, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (13, 3, 34, 128008.87, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (14, 3, 39, 371700.94, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (15, 5, 8, 320900.52, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (16, 8, 32, 186400.25, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (17, 1, 32, 311400.91, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (18, 5, 10, 196000.39, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (19, 6, 8, 380500.00, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (20, 6, 22, 380000.13, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (21, 4, 1, 407100.81, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (22, 5, 24, 43200.65, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (23, 10, 5, 171900.09, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (24, 13, 18, 386600.01, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (25, 2, 4, 378000.84, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (26, 11, 10, 123400.56, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (27, 7, 33, 152200.87, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (28, 13, 28, 399006.56, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (29, 7, 36, 253900.14, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (30, 2, 4, 421000.57, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (31, 8, 40, 342000.11, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (32, 5, 32, 36300.05, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (33, 3, 11, 220400.00, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (34, 5, 20, 126200.48, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (35, 11, 17, 191700.01, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (36, 5, 31, 257400.35, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (37, 2, 11, 294700.94, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (38, 4, 33, 409000.93, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (39, 9, 15, 212000.49, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (40, 13, 29, 200900.29, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (41, 4, 16, 544700.61, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (42, 9, 6, 153800.90, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (43, 5, 37, 102900.32, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (44, 12, 27, 181500.34, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (45, 9, 14, 178900.37, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (46, 13, 4, 231600.93, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (47, 6, 9, 313700.38, '2026-04-12');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (48, 11, 14, 55200.80, '2026-04-10');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (49, 7, 26, 295900.19, '2026-04-11');
-INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_amount, sale_date) VALUES (50, 5, 2, 700030.52, '2026-04-11');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (1, 11, 19, '2026-04-12', 2900.00, 'Large Pizza');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (2, 11, 42, '2026-04-12', 5800.00, '2 Large Pizzas');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (3, 3, 22, '2026-04-12', 1200.00, 'Tropical Smoothie');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (4, 12, 20, '2026-04-10', 3200.00, '2 Chicken Burger Meals');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (5, 1, 31, '2026-04-11', 3200.00, 'BBQ Platter');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (6, 11, 7, '2026-04-12', 2900.00, 'Large Pizza');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (7, 8, 19, '2026-04-11', 500.00, 'Red Bull Can');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (8, 8, 30, '2026-04-10', 1000.00, '2 Red Bull Cans');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (9, 9, 13, '2026-04-10', 300.00, 'Bottled Water');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (10, 8, 2, '2026-04-10', 1500.00, '3 Red Bull Cans');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (11, 9, 29, '2026-04-11', 700.00, 'Electrolyte Drink');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (12, 10, 6, '2026-04-12', 1800.00, 'Quarter Chicken Meal');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (13, 3, 34, '2026-04-11', 800.00, 'Fresh Mango Juice');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (14, 3, 39, '2026-04-12', 1200.00, 'Tropical Smoothie');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (15, 5, 8, '2026-04-10', 3500.00, 'Festival T-Shirt');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (16, 8, 32, '2026-04-10', 500.00, 'Red Bull Can');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (17, 1, 32, '2026-04-11', 1800.00, 'Beef Burger');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (18, 5, 10, '2026-04-11', 3500.00, 'Festival T-Shirt');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (19, 4, 17, '2026-04-10', 1800.00, 'Festival Cocktail');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (20, 6, 22, '2026-04-10', 2500.00, 'Beach Hat');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (21, 7, 25, '2026-04-11', 1500.00, 'Handmade Bracelet');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (22, 9, 30, '2026-04-12', 700.00, 'Electrolyte Drink');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (23, 10, 5, '2026-04-11', 1800.00, 'Quarter Chicken Meal');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (24, 12, 18, '2026-04-11', 1600.00, 'Chicken Burger Meal');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (25, 2, 4, '2026-04-11', 3500.00, '1kg Nyama Choma');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (26, 3, 7, '2026-04-12', 800.00, 'Fresh Mango Juice');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (27, 4, 9, '2026-04-12', 900.00, 'Craft Beer');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (28, 5, 11, '2026-04-12', 3500.00, 'Festival T-Shirt');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (29, 6, 13, '2026-04-12', 4200.00, 'Hawaiian Shirt');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (30, 7, 15, '2026-04-12', 8500.00, 'Canvas Painting');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (31, 8, 40, '2026-04-12', 2000.00, '4 Red Bull Cans');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (32, 5, 32, '2026-04-12', 7500.00, 'Festival Hoodie');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (33, 3, 11, '2026-04-11', 2400.00, '2 Tropical Smoothies');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (34, 5, 20, '2026-04-12', 3500.00, 'Festival T-Shirt');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (35, 11, 30, '2026-04-12', 2900.00, 'Large Pizza');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (36, 6, 12, '2026-04-11', 2500.00, 'Beach Hat');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (37, 12, 5, '2026-04-11', 1600.00, 'Chicken Burger Meal');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (38, 4, 33, '2026-04-11', 1800.00, 'Festival Cocktail');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (39, 9, 15, '2026-04-11', 300.00, 'Bottled Water');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (40, 12, 29, '2026-04-12', 1600.00, 'Chicken Burger Meal');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (41, 4, 16, '2026-04-11', 1800.00, 'Festival Cocktail');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (42, 9, 6, '2026-04-11', 700.00, 'Electrolyte Drink');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (43, 5, 37, '2026-04-10', 7500.00, 'Festival Hoodie');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (44, 12, 27, '2026-04-12', 3200.00, '2 Chicken Burger Meals');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (45, 9, 14, '2026-04-11', 700.00, 'Electrolyte Drink');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (46, 10, 4, '2026-04-12', 1800.00, 'Quarter Chicken Meal');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (47, 6, 9, '2026-04-12', 4200.00, 'Hawaiian Shirt');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (48, 11, 14, '2026-04-10', 2900.00, 'Large Pizza');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (49, 7, 26, '2026-04-11', 8500.00, 'Canvas Painting');
+INSERT INTO sales (sale_id, vendor_id, attendee_id, sale_date, amount, item) VALUES (50, 5, 22, '2026-04-11', 7500.00, 'Festival Hoodie');
 
 -- ---------------------------------------------------------------------
 -- SPONSORS 
@@ -232,7 +234,7 @@ INSERT INTO sponsors (sponsor_id, sponsor_name, contact_email, company_name, ind
 INSERT INTO sponsors (sponsor_id, sponsor_name, contact_email, company_name, industry) VALUES (5, 'Mastercard', 'contact@mastercard.com', 'Mastercard Inc', 'Financial Services');
 INSERT INTO sponsors (sponsor_id, sponsor_name, contact_email, company_name, industry) VALUES (6, 'Coca-Cola', 'contact@coca-cola.com', 'Coca-Cola Company', 'Beverages');
 INSERT INTO sponsors (sponsor_id, sponsor_name, contact_email, company_name, industry) VALUES (7, 'Jambojet', 'contact@jambojet.com', 'Jambojet Ltd', 'Airlines');
-INSERT INTO sponsors (sponsor_id, sponsor_name, contact_email, company_name, industry) VALUES (8, 'NCBA Bank', 'contact@ncba bank.com', 'NCBA Bank Ltd', 'Financial Services');
+INSERT INTO sponsors (sponsor_id, sponsor_name, contact_email, company_name, industry) VALUES (8, 'NCBA Bank', 'contact@ncbabank.com', 'NCBA Bank Ltd', 'Financial Services');
 
 -- ---------------------------------------------------------------------
 -- STAGE SPONSORS
