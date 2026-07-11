@@ -42,3 +42,30 @@ CREATE TABLE tickets(
     REFERENCES attendees(attendee_id)
 
 );
+
+-- ARTISTS TABLE
+
+CREATE TABLE artists(
+
+    artist_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    artist_name TEXT NOT NULL,
+
+    genre TEXT,
+
+    country TEXT NOT NULL
+
+);
+
+
+-- STAGES TABLE
+
+CREATE TABLE stages(
+
+    stage_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    stage_name TEXT NOT NULL UNIQUE,
+
+    location TEXT NOT NULL
+
+);
