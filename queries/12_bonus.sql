@@ -1,5 +1,3 @@
-USE summertides;
-
 -- 1. Which artist performs the most?
 SELECT
     ar.artist_name,
